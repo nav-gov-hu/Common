@@ -3,7 +3,7 @@
 # Project: NAV Common XML séma
 # Author: NAV Informatikai Intézet
 
-# Version: v3.0 2020/07/31
+# Version: v1.0 2020/07/31
 -->
 <xs:schema xmlns="http://schemas.nav.gov.hu/NTCA/1.0/common" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://schemas.nav.gov.hu/NTCA/1.0/common" elementFormDefault="qualified" attributeFormDefault="unqualified">
 	<!--Atomi típusok / Atomic types-->
