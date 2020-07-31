@@ -1,4 +1,4 @@
-# Online-Invoice
+# Common XSD project
 
 `scroll down for English version`
 
