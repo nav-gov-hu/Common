@@ -572,10 +572,10 @@
 					<xs:documentation xml:lang="en">Processing message</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="notification" type="SimpleText1024NotBlankType" minOccurs="0">
+			<xs:element name="notifications" type="NotificationsType" minOccurs="0">
 				<xs:annotation>
-					<xs:documentation xml:lang="hu">Egyéb értesítés</xs:documentation>
-					<xs:documentation xml:lang="en">Miscellaneous notification</xs:documentation>
+					<xs:documentation xml:lang="hu">Egyéb értesítések</xs:documentation>
+					<xs:documentation xml:lang="en">Miscellaneous notifications</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
@@ -599,6 +599,40 @@
 		<xs:complexContent>
 			<xs:extension base="BasicResponseType"/>
 		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="NotificationsType">
+		<xs:annotation>
+			<xs:documentation xml:lang="hu">Egyéb értesítések</xs:documentation>
+			<xs:documentation xml:lang="en">Miscellaneous notifications</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="notification" type="NotificationType" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation xml:lang="hu">Értesítés</xs:documentation>
+					<xs:documentation xml:lang="en">Notification</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="NotificationType">
+		<xs:annotation>
+			<xs:documentation xml:lang="hu">Értesítés</xs:documentation>
+			<xs:documentation xml:lang="en">Notification</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="notificationCode" type="SimpleText100NotBlankType">
+				<xs:annotation>
+					<xs:documentation xml:lang="hu">Értesítés kód</xs:documentation>
+					<xs:documentation xml:lang="en">Notification code</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="notificationText" type="SimpleText1024NotBlankType">
+				<xs:annotation>
+					<xs:documentation xml:lang="hu">Értesítés szöveg</xs:documentation>
+					<xs:documentation xml:lang="en">Notification text</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="TechnicalValidationResultType">
 		<xs:annotation>
