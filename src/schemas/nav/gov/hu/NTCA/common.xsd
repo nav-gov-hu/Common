@@ -3,7 +3,7 @@
 # Project: NAV NTCA Common XML séma
 # Author: NAV Informatikai Intézet
 
-# Version: v1.0 2020/11/23
+# Version: v1.0 RC4 2023/02/10
 -->
 <xs:schema xmlns="http://schemas.nav.gov.hu/NTCA/1.0/common" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://schemas.nav.gov.hu/NTCA/1.0/common" elementFormDefault="qualified" attributeFormDefault="unqualified">
 	<!--Atomi típusok / Atomic types-->
@@ -202,6 +202,15 @@
 			<xs:pattern value="\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d{1,3})?Z"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="GenericUnsignedIntegerType">
+		<xs:annotation>
+			<xs:documentation xml:lang="hu">Általános egész szám típus</xs:documentation>
+			<xs:documentation xml:lang="en">Generic unsigned integer type</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:integer">
+			<xs:minInclusive value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:simpleType name="SHA256Type">
 		<xs:annotation>
 			<xs:documentation xml:lang="hu">SHA256 kód megadására szolgáló típus</xs:documentation>
@@ -358,6 +367,27 @@
 			<xs:pattern value="[A-Z0-9][A-Z0-9\s\-]{1,8}[A-Z0-9]"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="SwiftCodeType">
+		<xs:annotation>
+			<xs:documentation xml:lang="hu">SWIFT kódot leíró típus</xs:documentation>
+			<xs:documentation xml:lang="en">SWIFT code type</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="8"/>
+			<xs:maxLength value="11"/>
+			<xs:pattern value="[A-Z]{6}[A-Z2-9][A-NP-Z0-9]([A-Z0-9]{3}){0,1}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="TaxIdentificationNumberType">
+		<xs:annotation>
+			<xs:documentation xml:lang="hu">Adóazonosító jel típus</xs:documentation>
+			<xs:documentation xml:lang="en">Tax identification number type</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:integer">
+			<xs:totalDigits value="10"/>
+			<xs:pattern value="[0-9]{10}"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:simpleType name="TaxpayerIdType">
 		<xs:annotation>
 			<xs:documentation xml:lang="hu">Az adószám nyolc jegyű törzsszám része</xs:documentation>
@@ -432,6 +462,32 @@
 				<xs:annotation>
 					<xs:documentation xml:lang="hu">Hiba</xs:documentation>
 					<xs:documentation xml:lang="en">Error</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="LocalizationType">
+		<xs:annotation>
+			<xs:documentation xml:lang="hu">Lokalizációt jelölő típus</xs:documentation>
+			<xs:documentation xml:lang="en">Localization type</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="HU">
+				<xs:annotation>
+					<xs:documentation xml:lang="hu">Magyar</xs:documentation>
+					<xs:documentation xml:lang="en">Hungarian</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="EN">
+				<xs:annotation>
+					<xs:documentation xml:lang="hu">Angol</xs:documentation>
+					<xs:documentation xml:lang="en">English</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DE">
+				<xs:annotation>
+					<xs:documentation xml:lang="hu">Német</xs:documentation>
+					<xs:documentation xml:lang="en">German</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 		</xs:restriction>
