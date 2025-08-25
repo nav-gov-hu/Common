@@ -18,3 +18,15 @@
 *.zip
 *.tar.gz
 *.rar
+
+# IDE specific files
+.idea
+*.iml
+.settings/
+.metadata
+.project
+.classpath
+target/
+bin/
+.DS_Store
+.vscode
