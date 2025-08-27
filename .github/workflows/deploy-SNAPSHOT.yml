@@ -1,0 +1,24 @@
+# This is a basic workflow that is manually triggered
+name: Maven Deploy SNAPSHOT
+
+# Controls when the action will run. Workflow runs when manually triggered using the UI
+# or API.
+on:
+  workflow_dispatch:
+    # Inputs the workflow accepts.
+    inputs:
+      comment:
+        # Friendly description to be shown in the UI instead of 'name'
+        description: 'Comment for deploy'
+        # Default value if no value is explicitly provided
+        default: 'Deploy SNAPSHOT from WEB UI'
+        # Input has to be provided for the workflow to run
+        required: true
+
+jobs:
+  deploy-snapshot:
+    uses: nav-gov-hu/.github/.github/workflows/WF-mvn-deploy-SNAPSHOT.yml@release/0.1.x
+    with:
+      java-version: '11'
+      deploy-maven-cmd: mvn -B -P release deploy
+    secrets: inherit

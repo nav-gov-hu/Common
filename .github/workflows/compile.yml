@@ -1,0 +1,21 @@
+name: Compile project with Maven
+on:
+  push:
+    branches:
+      - main
+      - 'releases/**'
+  pull_request:
+    branches-ignore:
+      - 'gh-pages'
+      - 'dependabot/**'
+
+jobs:
+  compile:
+    strategy:
+      matrix:
+        os: [ 'ubuntu-latest', 'windows-latest' ]
+        java: [ '11', '17', '21' ]
+    uses: nav-gov-hu/.github/.github/workflows/WF-mvn-compile.yml@release/0.1.x
+    with:
+      runs-on-os: ${{ matrix.os }}
+      java-version: ${{ matrix.java }}
