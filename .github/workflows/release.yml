@@ -19,5 +19,5 @@ jobs:
   deploy-snapshot:
     uses: nav-gov-hu/.github/.github/workflows/WF-mvn-release.yml@release/0.1.x
     with:
-      java-version: '11'
+      java-version: '17'
     secrets: inherit
