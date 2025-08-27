@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+
+    <public publicId="http://schemas.nav.gov.hu/NTCA/1.0/common"
+        uri="maven:hu.gov.nav.schemas.common:schemas:jar::!/xsd/hu/gov/nav/schemas/NTCA/1.0/common/common.xsd" />
+
+</catalog>

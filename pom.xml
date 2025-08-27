@@ -18,7 +18,12 @@
     <modules>
         <module>schemas</module>
         <module>core</module>
+        <module>dto</module>
     </modules>
+
+    <properties>
+        <java.version>11</java.version>
+    </properties>
 
     <name>Nav Common schema definition</name>
     <description>Nav Common schema definition</description>
@@ -36,17 +41,37 @@
     </issueManagement>
 
     <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-release-plugin</artifactId>
+                    <configuration>
+                        <releaseProfiles>release</releaseProfiles>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>license-maven-plugin</artifactId>
+                    <configuration>
+                        <includes>
+                            <include>**/*.java</include>
+                        </includes>
+                        <ignoreNoFileToScan>true</ignoreNoFileToScan>
+                        <projectName>Nav Common schema definition</projectName>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+
         <plugins>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>license-maven-plugin</artifactId>
-                <configuration>
-                    <includes>
-                        <include>**/*.java</include>
-                    </includes>
-                    <ignoreNoFileToScan>true</ignoreNoFileToScan>
-                    <projectName>Nav Common schema definition</projectName>
-                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>io.smallrye</groupId>
+                <artifactId>jandex-maven-plugin</artifactId>
             </plugin>
         </plugins>
     </build>
