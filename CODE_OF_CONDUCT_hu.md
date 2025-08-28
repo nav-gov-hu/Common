@@ -1,6 +1,6 @@
-= Közreműködők Magatartási Kódexe
+# Közreműködők Magatartási Kódexe
 
-== Vállalásunk
+## Vállalásunk
 
 Mi mint tagok, közreműködők és vezetők vállaljuk azt, hogy a projektünk és 
 közösségünk zaklatásmentes mindenki számára, függetlenül életkortól, 
@@ -13,7 +13,7 @@ identitástól és orientációtól.
 Vállaljuk, hogy úgy cselekszünk és viselkedünk, hogy hozzájáruljunk egy 
 nyitott, barátságos, sokszínű, befogadó és egészséges közösséghez.
 
-== Szabályaink
+## Szabályaink
 
 Viselkedési példák, amelyek hozzájárulnak a pozitív környezet létrehozásához a 
 közösségünkben:
@@ -37,7 +37,7 @@ politikai támadások
 közzététele, az érintett kifejezett engedélye nélkül
 * Egyéb magatartás, amelyek átlépik a szakma ésszerű határait
 
-== Kötelezettségek végrehajtása
+## Kötelezettségek végrehajtása
 
 A közösség vezetői felelősek az elfogadható viselkedési szabályok tisztázásáért
 és betartatásáért, hogy megfelelő és tisztességes korrekciós intézkedéseket 
@@ -49,7 +49,7 @@ vagy elutasítsák a megjegyzéseket, kódokat, wiki szerkesztéseket, hibákat,
 észrevételeket, és egyéb hozzájárulásokat, amelyek nem illeszkednek e 
 Magatartási Kódexhez és ha szükséges, közöljék moderációs döntéseik okait.
 
-== Hatály
+## Hatály
 
 Ez a Magatartási Kódex a közösség minden területén érvényes, és akkor is 
 érvényes, amikor az egyén nyilvános helyeken hivatalosan képviseli a közösséget.
@@ -57,7 +57,7 @@ Például ilyen események a közösség képviseletére használt hivatalos e-m
 használata, hivatalos szociális médiafiókon keresztül történő közzétételek, 
 kijelölt képviselőként egy online vagy offline eseményen történő részvétel.
 
-== Végrehajtás
+## Végrehajtás
 
 Bántalmazó, zaklató vagy általában elfogadhatatlan viselkedést a végrehajtásért
 felelős közösségi vezetőnek lehet jelenteni a(z) zenit@nav.gov.hu címen.
@@ -66,13 +66,13 @@ Minden panasz azonnal és tisztességesen felülvizsgálatra, és kivizsgálásr
 Minden közösségi vezető köteles tiszteletben tartani az incidens bejelentőjének 
 magánéletét és biztonságát.
 
-== Végrehajtási irányelvek
+## Végrehajtási irányelvek
 
 A közösségi vezetők ezeket a Közösségi Hatásra Vonatkozó Iránymutatásokat 
 követik a Magatartási Kódexet sértőnek ítélt cselekedetek következményeinek 
 meghatározásakor:
 
-=== 1. Helyesbítés
+### 1. Helyesbítés
 
 **Közösségi hatás**: Nem megfelelő nyelvhasználat vagy egyéb, a közösségben 
 szakmaiatlannak vagy nemkívánatosnak tartott viselkedés.
@@ -81,7 +81,7 @@ szakmaiatlannak vagy nemkívánatosnak tartott viselkedés.
 amely tisztázza a jogsértés jellegét, és magyarázatot ad arra, hogy a 
 viselkedés miért volt helytelen. Nyilvános bocsánatkérés is kérhető.
 
-=== 2. Figyelmeztetés
+### 2. Figyelmeztetés
 
 **Közösségi hatás**: Szabálysértés egyetlen incidensen vagy cselekvések 
 sorozatán keresztül.
@@ -93,7 +93,7 @@ magában foglalja a közösségi terekben, valamint az olyan külső csatornáko
 interakciók elkerülését, mint a közösségi média. Ezen feltételek megsértése 
 ideiglenes vagy végleges tiltást vonhat maga után.
 
-=== 3. Ideiglenes tiltás
+### 3. Ideiglenes tiltás
 
 **Közösségi hatás**: A közösségi normák súlyos megsértése, beleértve a tartósan 
 helytelen viselkedést.
@@ -105,7 +105,7 @@ az érintett személyekkel, beleértve a Magatartási Kódexet betartató
 személyekkel való kéretlen interakciót is.
 E feltételek megszegése végleges tiltást vonhat maga után.
 
-=== 4. Végleges tiltás
+### 4. Végleges tiltás
 
 **Közösségi hatás**: A közösségi normák rendszeres megsértése, beleértve a 
 tartósan helytelen viselkedést, egyének zaklatását, vagy csoportokkal szembeni 
@@ -114,14 +114,14 @@ agressziót, illetve becsmérlést.
 **Következmény**: A közösségen belüli bármilyen nyilvános interakciótól való 
 végleges eltiltás.
 
-== Összegzés
+## Összegzés
 
 Ezt a Magatartási Kódexet elérheti az alábbi oldalon: 
 Contributor Covenant, v2.1, 
 https://www.contributor-covenant.org/version/2/1/code_of_conduct.html.
 
 A közösségi hatásra vonatkozó iránymutatásokat a 
-Mozilla's code of conduct enforcement ladder inspirálta.
+[Mozilla's code of conduct enforcement ladder](https://github.com/mozilla/inclusion) inspirálta.
 
 A gyakran ismételt kérdésekre a választ a Magatartási Kódexről lásd a 
 https://www.contributor-covenant.org/faq oldalon. A fordítások elérhetőek
