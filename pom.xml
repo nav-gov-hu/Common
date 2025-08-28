@@ -6,7 +6,7 @@
     <parent>
         <groupId>hu.gov.nav.pom</groupId>
         <artifactId>oss</artifactId>
-        <version>0.4.0-SNAPSHOT</version>
+        <version>0.4.0</version>
     </parent>
 
     <groupId>hu.gov.nav.schemas.common</groupId>
