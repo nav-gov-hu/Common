@@ -1,0 +1,23 @@
+# This is a basic workflow that is manually triggered
+name: Maven Release
+
+# Controls when the action will run. Workflow runs when manually triggered using the UI
+# or API.
+on:
+  workflow_dispatch:
+    # Inputs the workflow accepts.
+    inputs:
+      comment:
+        # Friendly description to be shown in the UI instead of 'name'
+        description: 'Comment for release'
+        # Default value if no value is explicitly provided
+        default: 'Start release from WEB UI'
+        # Input has to be provided for the workflow to run
+        required: true
+
+jobs:
+  deploy-snapshot:
+    uses: nav-gov-hu/.github/.github/workflows/WF-mvn-release.yml@release/0.1.x
+    with:
+      java-version: '17'
+    secrets: inherit

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<jaxb:bindings version="3.0"
+    xmlns:jaxb="https://jakarta.ee/xml/ns/jaxb"
+    xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
+    jaxb:extensionBindingPrefixes="xjc">
+
+    <jaxb:globalBindings generateIsSetMethod="true">
+        <xjc:serializable uid="1" />
+
+        <xjc:javaType xmlType="xsd:date"
+            name="java.time.LocalDate"
+            adapter="hu.gov.nav.schemas.common.core.adapter.LocalDateXmlAdapter" />
+        <xjc:javaType xmlType="xsd:time"
+            name="java.time.OffsetTime"
+            adapter="hu.gov.nav.schemas.common.core.adapter.UtcOffsetTimeXmlAdapter" />
+        <xjc:javaType xmlType="xsd:dateTime"
+            name="java.time.OffsetDateTime"
+            adapter="hu.gov.nav.schemas.common.core.adapter.UtcOffsetDateTimeXmlAdapter" />
+    </jaxb:globalBindings>
+
+</jaxb:bindings>

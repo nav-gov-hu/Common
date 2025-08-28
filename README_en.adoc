@@ -1,0 +1,78 @@
+= Common XSD project
+
+link:README.adoc[Hungarian version]
+
+Welcome to the public repository of the Common schema descriptors!
+
+== 1) Repository contents and purpose
+
+This repository was created to version control the atomic types commonly used in NAV systems,
+business catalog-like elements, and types implementing generic API communication in a separate,
+shared XSD.
+This allows these schema elements to be reused by multiple NAV projects,
+thus standardizing API communication.
+
+Please note that although the repository is publicly accessible,
+a GitHub user account is required to contribute to reviews and development.
+A user account can be created for free in just a few minutes.
+
+The project contains the XSD schemas themselves, DTO objects generated from them, and classes that support the generation process.
+Its purpose is to avoid redundant elements across different projects, ensuring unified API communication.
+
+DTO generation itself is based on XSD Catalog, which enables centralized management and reuse of schema elements.
+
+.schemaLocation vs XSD Catalog
+[source, xml]
+----
+<!-- schemaLocation solution -->
+<xs:import namespace="http://schemas.nav.gov.hu/NTCA/1.0/common" schemaLocation="./../nav-common"/>
+<!-- catalog solution -->
+<xs:import namespace="http://schemas.nav.gov.hu/NTCA/1.0/common"/> + catalog file
+----
+As an example, see the `dto/dto-jakarta/src/main/resources/catalog/catalog.cat` + `dto/dto-jakarta/src/main/resources/catalog/all-in-one.xsd` files, and use `dto/dto-jakarta/pom.xml` for generation.
+Generation is done using the https://github.com/highsource/jaxb-tools Maven plugin.
+
+.Project structure
+[source, bash]
+----
+Common
+├── core
+│   └── core-jakarta # Jakarta EE specific general objects
+├── dto
+│   └── dto-jakarta  # Jakarta EE generated DTO objects based on schemas XSD
+└── schemas          # XSD files
+----
+
+== 2) Usage
+
+The project is Maven-based, so a Maven environment is required for usage.
+
+.Importing XSD schemas
+[source, xml]
+----
+<dependency>
+    <groupId>hu.gov.nav.schemas.common</groupId>
+    <artifactId>schemas</artifactId>
+    <version>VERSION</version>
+</dependency>
+----
+
+.Jakarta EE helper classes
+[source, xml]
+----
+<dependency>
+    <groupId>hu.gov.nav.schemas.common</groupId>
+    <artifactId>core-jakarta</artifactId>
+    <version>VERSION</version>
+</dependency>
+----
+
+.XSD schemas + generated DTO objects
+[source, xml]
+----
+<dependency>
+    <groupId>hu.gov.nav.schemas.common</groupId>
+    <artifactId>dto-jakarta</artifactId>
+    <version>VERSION</version>
+</dependency>
+----

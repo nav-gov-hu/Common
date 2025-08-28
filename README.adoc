@@ -1,0 +1,78 @@
+= Common XSD project
+
+link:README_en.adoc[English version]
+
+Üdvözöljük a Common sémaleíró publikus tárhelyén!
+
+== 1) A tárhely tartalma és célja
+
+A tárhely abból a célból jött létre, hogy a NAV rendszereiben használt általánosan található atomi típusokat,
+üzleti katalógus jellegű elemeket, valamint a generikus API kommunikációt megvalósító típusokat egy külön,
+közös XSD-ben lehessen verziókezelni.
+Ez lehetővé teszi azt, hogy ezeket a séma elemeket több NAV-os projekt is felhasználhassa,
+ez által az API kommunikáció egységesíthető.
+
+Kérjük figyelembe venni, hogy bár a tárhely publikusan elérhető,
+a véleményezéshez és a fejlesztéshez hozzájáruláshoz GitHub userre van szükség.
+A felhasználó ingyenesen, pár perc alatt létrehozható.
+
+A projekt tartalma maga az XSD sémák, abból generált DTO objektumok és a olyan osztályok melyek a generálást kiszolgálják.
+Célja hogy ne legyenek redundáns elemek a különböző projektek között, egységes API kommunikációt biztosítva.
+
+Maga a DTO generálás XSD Catalog alapon működik, ami lehetővé teszi a séma elemek központi kezelését és újrahasználatát.
+
+.schemaLocation vs XSD Catalog
+[source, xml]
+----
+<!-- schemaLocation megoldás -->
+<xs:import namespace="http://schemas.nav.gov.hu/NTCA/1.0/common" schemaLocation="./../nav-common"/>
+<!-- catalog megoldás -->
+<xs:import namespace="http://schemas.nav.gov.hu/NTCA/1.0/common"/> + catalog file
+----
+Mintaként szolgálhat a `dto/dto-jakarta/src/main/resources/catalog/catalog.cat` + `dto/dto-jakarta/src/main/resources/catalog/all-in-one.xsd` fájlok, majd ennek a `dto/dto-jakarta/pom.xml` felhasználása generálásnál.
+A generálás a https://github.com/highsource/jaxb-tools maven plugin használatával történik.
+
+.Projekt struktúra
+[source, bash]
+----
+Common
+├── core
+│   └── core-jakarta # Jakarta EE specifikus általános objektumok
+├── dto
+│   └── dto-jakarta  # Jakarta EE generált DTO objektumok a schemas XSD alapján
+└── schemas          # XSD fájlok
+----
+
+== 2) Használat
+
+A projekt Maven alapú, így a használatához szükséges a Maven környezet.
+
+.XSD sémák importálása
+[source, xml]
+----
+<dependency>
+    <groupId>hu.gov.nav.schemas.common</groupId>
+    <artifactId>schemas</artifactId>
+    <version>VERSION</version>
+</dependency>
+----
+
+.Jakarta EE ségédosztályok
+[source, xml]
+----
+<dependency>
+    <groupId>hu.gov.nav.schemas.common</groupId>
+    <artifactId>core-jakarta</artifactId>
+    <version>VERSION</version>
+</dependency>
+----
+
+.XSD sémák + generált DTO objektumok
+[source, xml]
+----
+<dependency>
+    <groupId>hu.gov.nav.schemas.common</groupId>
+    <artifactId>dto-jakarta</artifactId>
+    <version>VERSION</version>
+</dependency>
+----

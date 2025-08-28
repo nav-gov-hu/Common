@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns="http://catalog.schemas.nav.gov.hu/NTCA/1.0/common/all-in-one"
+    targetNamespace="http://catalog.schemas.nav.gov.hu/NTCA/1.0/common/all-in-one"
+    elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+    <xsd:import namespace="http://schemas.nav.gov.hu/NTCA/1.0/common" />
+
+</xsd:schema>
