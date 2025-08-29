@@ -9,7 +9,7 @@
 
     <groupId>hu.gov.nav.schemas.common</groupId>
     <artifactId>common</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1-SNAPSHOT</version>
 
     <packaging>pom</packaging>
 
@@ -31,7 +31,7 @@
         <connection>scm:git:git@github.com:nav-gov-hu/Common.git</connection>
         <developerConnection>scm:git:git@github.com:nav-gov-hu/Common.git</developerConnection>
         <url>https://github.com/nav-gov-hu/Common</url>
-      <tag>common-1.0.0</tag>
+      <tag>HEAD</tag>
   </scm>
 
     <issueManagement>
