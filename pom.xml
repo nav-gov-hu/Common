@@ -25,8 +25,8 @@
         <java.version>17</java.version>
     </properties>
 
-    <name>Nav Common schema definition</name>
-    <description>Nav Common schema definition</description>
+    <name>common</name>
+    <description>Parent Nav Common module</description>
     <url>https://github.com/nav-gov-hu/Common</url>
 
     <scm>

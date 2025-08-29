@@ -16,7 +16,7 @@ on:
         required: true
 
 jobs:
-  deploy-snapshot:
+  maven-release:
     uses: nav-gov-hu/.github/.github/workflows/WF-mvn-release.yml@release/0.1.x
     with:
       java-version: '17'
