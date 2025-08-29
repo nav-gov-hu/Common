@@ -11,6 +11,9 @@
 
     <artifactId>dto-jakarta</artifactId>
 
+    <name>dto-jakarta</name>
+    <description>Nav Common DTO module for Jakarta EE</description>
+
     <dependencies>
         <dependency>
             <groupId>hu.gov.nav.schemas.common</groupId>

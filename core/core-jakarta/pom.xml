@@ -11,6 +11,9 @@
 
     <artifactId>core-jakarta</artifactId>
 
+    <name>core-jakarta</name>
+    <description>Nav Common core module for Jakarta EE</description>
+
     <properties>
         <version.jakarta.xml.bind-api>4.0.2</version.jakarta.xml.bind-api>
         <version.junit-jupiter>5.12.0</version.junit-jupiter>

@@ -11,4 +11,7 @@
 
     <artifactId>schemas</artifactId>
 
+    <name>schemas</name>
+    <description>Nav Common schema definitions</description>
+
 </project>

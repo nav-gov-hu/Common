@@ -13,6 +13,9 @@
 
     <packaging>pom</packaging>
 
+    <name>dto</name>
+    <description>Nav Common DTO module</description>
+
     <modules>
         <module>dto-jakarta</module>
     </modules>
