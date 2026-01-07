@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+# Project: NAV NTCA Common XML séma
+# Author: NAV Informatikai Intézet
+
+# Version: v2.0.0-rc.1 2026/02/12
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://schemas.nav.gov.hu/NTCA/2.0/common/paging"
+    xmlns="http://schemas.nav.gov.hu/NTCA/2.0/common/paging"
+    xmlns:ntcaString="http://schemas.nav.gov.hu/NTCA/2.0/common/string"
+    xmlns:ntcaType="http://schemas.nav.gov.hu/NTCA/2.0/common/type"
+    elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+    <xs:import namespace="http://schemas.nav.gov.hu/NTCA/2.0/common/string" />
+    <xs:import namespace="http://schemas.nav.gov.hu/NTCA/2.0/common/type" />
+
+    <!-- SIMPLE TYPES -->
+    <xs:simpleType name="PageNumberType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Lap szám (1-től kezdődően)</xs:documentation>
+            <xs:documentation xml:lang="en">Page number (starting from 1)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:long">
+            <xs:minInclusive value="1" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="PageSizeType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Lekérdezett rekordok maximális száma</xs:documentation>
+            <xs:documentation xml:lang="en">Maximum number of queried records</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:int">
+            <xs:minInclusive value="1" />
+            <xs:maxInclusive value="100" />
+            <xs:totalDigits value="3" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="OrderByType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Rendezés iránya</xs:documentation>
+            <xs:documentation xml:lang="en">Order direction</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="ntcaString:AtomicStringType4">
+            <xs:enumeration value="ASC">
+                <xs:annotation>
+                    <xs:documentation xml:lang="hu">Növekvő</xs:documentation>
+                    <xs:documentation xml:lang="en">Ascending</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="DESC">
+                <xs:annotation>
+                    <xs:documentation xml:lang="hu">Csökkenő</xs:documentation>
+                    <xs:documentation xml:lang="en">Descending</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="OffsetType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Eltolás értéke</xs:documentation>
+            <xs:documentation xml:lang="en">Offset value</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:long">
+            <xs:minInclusive value="0" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- COMPLEX TYPES -->
+    <xs:complexType name="PaginationType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Lapozás információk</xs:documentation>
+            <xs:documentation xml:lang="en">Pagination information</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="pageSize" type="PageSizeType">
+                <xs:annotation>
+                    <xs:documentation xml:lang="hu">Lekérdezett rekordok száma oldalanként</xs:documentation>
+                    <xs:documentation xml:lang="en">Number of queried records per page</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="page" type="PageNumberType">
+                <xs:annotation>
+                    <xs:documentation xml:lang="hu">Adott lap száma (1-től kezdődően)</xs:documentation>
+                    <xs:documentation xml:lang="en">Page number (starting from 1)</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="PaginationResponseType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Lapozás információk válasz esetén</xs:documentation>
+            <xs:documentation xml:lang="en">Pagination information in response</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="PaginationType">
+                <xs:sequence>
+                    <xs:element name="totalRowCount" type="xs:long">
+                        <xs:annotation>
+                            <xs:documentation xml:lang="hu">Teljes rekordszám, ami a lekérdezési feltételekkel elérhető</xs:documentation>
+                            <xs:documentation xml:lang="en">Total number of records available with the query conditions</xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="OffsetingType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Lapozás eltolással</xs:documentation>
+            <xs:documentation xml:lang="en">Pagination with offset</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="offset" type="OffsetType">
+                <xs:annotation>
+                    <xs:documentation xml:lang="hu">Eltolás értéke</xs:documentation>
+                    <xs:documentation xml:lang="en">Offset value</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="limit" type="PageSizeType">
+                <xs:annotation>
+                    <xs:documentation xml:lang="hu">Lekérdezett rekordok maximális száma</xs:documentation>
+                    <xs:documentation xml:lang="en">Maximum number of queried records</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="OffsetingResponseType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Lapozás eltolással válasz esetén</xs:documentation>
+            <xs:documentation xml:lang="en">Pagination with offset in response</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="OffsetingType">
+                <xs:sequence>
+                    <xs:element name="totalRowCount" type="xs:long" minOccurs="0">
+                        <xs:annotation>
+                            <xs:documentation xml:lang="hu">Teljes rekordszám, ami a lekérdezési feltételekkel elérhető (ha túl kölcséges, nincs töltve)</xs:documentation>
+                            <xs:documentation xml:lang="en">Total number of records available with the query conditions (if too expensive, not filled)</xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                    <xs:element name="nextOffset" type="OffsetType" minOccurs="0">
+                        <xs:annotation>
+                            <xs:documentation xml:lang="hu">Következő oldal eltolás értéke</xs:documentation>
+                            <xs:documentation xml:lang="en">Next page offset value</xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="CursoringType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Lapozás kurzorral</xs:documentation>
+            <xs:documentation xml:lang="en">Pagination with cursor</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="cursor" type="xs:base64Binary">
+                <xs:annotation>
+                    <xs:documentation xml:lang="hu">Kurzor értéke</xs:documentation>
+                    <xs:documentation xml:lang="en">Cursor value</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="limit" type="PageSizeType">
+                <xs:annotation>
+                    <xs:documentation xml:lang="hu">Lekérdezett rekordok maximális száma</xs:documentation>
+                    <xs:documentation xml:lang="en">Maximum number of queried records</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="CursoringResponseType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Lapozás kurzorral válasz esetén</xs:documentation>
+            <xs:documentation xml:lang="en">Pagination with cursor in response</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="CursoringType">
+                <xs:sequence>
+                    <xs:element name="nextCursor" type="xs:base64Binary" minOccurs="0">
+                        <xs:annotation>
+                            <xs:documentation xml:lang="hu">Következő oldal kurzor értéke</xs:documentation>
+                            <xs:documentation xml:lang="en">Next page cursor value</xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+</xs:schema>

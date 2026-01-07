@@ -23,17 +23,17 @@
  * THE SOFTWARE.
  * #L%
  */
-package hu.gov.nav.schemas.common.core.adapter;
+package hu.gov.nav.schemas.common2.core.adapter;
 
-import java.time.OffsetDateTime;
+import java.time.OffsetTime;
 import java.time.ZoneOffset;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-class UtcOffsetDateTimeXmlAdapterTest {
+class UtcOffsetTimeXmlAdapterTest {
 
-    private final UtcOffsetDateTimeXmlAdapter adapter = new UtcOffsetDateTimeXmlAdapter();
+    private final UtcOffsetTimeXmlAdapter adapter = new UtcOffsetTimeXmlAdapter();
 
     @Test
     void nullInput() {
@@ -41,31 +41,30 @@ class UtcOffsetDateTimeXmlAdapterTest {
     }
 
     @Test
-    void offsetPositive() {
-        OffsetDateTime input = OffsetDateTime.parse("2025-08-27T13:33:00+02:00");
+    void offsetIsPositive() {
+        OffsetTime input = OffsetTime.parse("15:07:34.2160856+02:00");
         String result = adapter.marshal(input);
-        Assertions.assertThat(result).isEqualTo("2025-08-27T11:33:00Z");
+        Assertions.assertThat(result).isEqualTo("13:07:34.216085600Z");
     }
 
     @Test
-    void offsetNegative() {
-        OffsetDateTime input = OffsetDateTime.parse("2025-08-27T08:33:00-03:00");
+    void offsetIsNegative() {
+        OffsetTime input = OffsetTime.parse("10:15:30.1234567-03:00");
         String result = adapter.marshal(input);
-        Assertions.assertThat(result).isEqualTo("2025-08-27T11:33:00Z");
+        Assertions.assertThat(result).isEqualTo("13:15:30.123456700Z");
     }
 
     @Test
     void alreadyUtc() {
-        OffsetDateTime input = OffsetDateTime.of(2025, 8, 27, 11, 33, 0, 0, ZoneOffset.UTC);
+        OffsetTime input = OffsetTime.of(8, 30, 0, 0, ZoneOffset.UTC);
         String result = adapter.marshal(input);
-        Assertions.assertThat(result).isEqualTo("2025-08-27T11:33:00Z");
+        Assertions.assertThat(result).isEqualTo("08:30Z");
     }
 
     @Test
     void preserveFractionalSeconds() {
-        OffsetDateTime input = OffsetDateTime.parse("2025-08-27T23:59:59.999999999+00:00");
+        OffsetTime input = OffsetTime.parse("23:59:59.999999999+00:00");
         String result = adapter.marshal(input);
-        Assertions.assertThat(result).isEqualTo("2025-08-27T23:59:59.999999999Z");
+        Assertions.assertThat(result).isEqualTo("23:59:59.999999999Z");
     }
-
 }

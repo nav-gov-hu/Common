@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+# Project: NAV NTCA Common XML séma
+# Author: NAV Informatikai Intézet
+
+# Version: v2.0.0-rc.1 2026/02/12
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://schemas.nav.gov.hu/NTCA/2.0/common/customer"
+    xmlns="http://schemas.nav.gov.hu/NTCA/2.0/common/customer"
+    xmlns:ntcaString="http://schemas.nav.gov.hu/NTCA/2.0/common/string"
+    xmlns:ntcaType="http://schemas.nav.gov.hu/NTCA/2.0/common/type"
+    elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+    <xs:import namespace="http://schemas.nav.gov.hu/NTCA/2.0/common/string" />
+    <xs:import namespace="http://schemas.nav.gov.hu/NTCA/2.0/common/type" />
+
+    <xs:simpleType name="BankAccountNumberType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Bankszámla megadására szolgáló típus</xs:documentation>
+            <xs:documentation xml:lang="en">Type of bank account number</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="ntcaString:AtomicStringType34">
+            <xs:pattern value="[0-9]{8}[-][0-9]{8}[-][0-9]{8}|[0-9]{8}[-][0-9]{8}|[A-Z]{2}[0-9]{2}[0-9A-Za-z]{11,30}" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="CommunityVatNumberType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Közösségi adószám típus</xs:documentation>
+            <xs:documentation xml:lang="en">Community VAT registration number</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="ntcaString:AtomicStringType15">
+            <xs:pattern value="[A-Z]{2}[0-9A-Z]{2,13}" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="CountryCodeType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Országkód típus ISO 3166 alpha-2 szabvány szerint</xs:documentation>
+            <xs:documentation xml:lang="en">Country code type (ISO 3166 alpha-2)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="ntcaString:AtomicStringType2">
+            <xs:pattern value="[A-Z]{2}" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="CountyCodeType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Megyekód</xs:documentation>
+            <xs:documentation xml:lang="en">County code</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="ntcaString:AtomicStringType2">
+            <xs:pattern value="[0-9]{2}" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="CurrencyType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Pénznem típus (ISO 4217 szabvány szerinti 3 hosszú pénznem kód)</xs:documentation>
+            <xs:documentation xml:lang="en">Currency type (three digit ISO 4217 currency code)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="ntcaString:AtomicStringType3">
+            <xs:pattern value="[A-Z]{3}" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="PlateNumberType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Kereskedelmi gépjármű forgalmi rendszáma (csak betűk és számok)</xs:documentation>
+            <xs:documentation xml:lang="en">Registration number of commercial motor vehicle (letters and numbers only)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="ntcaString:AtomicStringType30">
+            <xs:pattern value="[A-Z0-9ÖŐÜŰ]{2,30}" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="PostalCodeType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Irányítószám típus</xs:documentation>
+            <xs:documentation xml:lang="en">ZIP code type</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="ntcaString:AtomicStringType10">
+            <xs:minLength value="3" />
+            <xs:pattern value="[A-Z0-9][A-Z0-9\s\-]{1,8}[A-Z0-9]" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SwiftCodeType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">SWIFT kódot leíró típus</xs:documentation>
+            <xs:documentation xml:lang="en">SWIFT code type</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="ntcaString:AtomicStringType11">
+            <xs:minLength value="8" />
+            <xs:pattern value="[A-Z]{6}[A-Z2-9][A-NP-Z0-9]([A-Z0-9]{3}){0,1}" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TaxIdentificationNumberType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Adóazonosító jel típus</xs:documentation>
+            <xs:documentation xml:lang="en">Tax identification number type</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:integer">
+            <xs:totalDigits value="10" />
+            <xs:pattern value="[0-9]{10}" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TaxpayerIdType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Az adószám nyolc jegyű törzsszám része</xs:documentation>
+            <xs:documentation xml:lang="en">The 8-digit core number section of the tax number</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="ntcaString:AtomicStringType8">
+            <xs:length value="8" />
+            <xs:pattern value="[0-9]{8}" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="VatCodeType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">ÁFA kód</xs:documentation>
+            <xs:documentation xml:lang="en">VAT code</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="ntcaString:AtomicStringType2">
+            <xs:length value="1" />
+            <xs:pattern value="[1-9]{1}" />
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>

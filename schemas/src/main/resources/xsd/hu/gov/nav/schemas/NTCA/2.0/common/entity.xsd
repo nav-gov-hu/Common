@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+# Project: NAV NTCA Common XML séma
+# Author: NAV Informatikai Intézet
+
+# Version: v2.0.0-rc.1 2026/02/12
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://schemas.nav.gov.hu/NTCA/2.0/common/entity"
+    xmlns="http://schemas.nav.gov.hu/NTCA/2.0/common/entity"
+    xmlns:ntcaString="http://schemas.nav.gov.hu/NTCA/2.0/common/string"
+    xmlns:ntcaType="http://schemas.nav.gov.hu/NTCA/2.0/common/type"
+    elementFormDefault="qualified" attributeFormDefault="unqualified">
+ 
+    <xs:import namespace="http://schemas.nav.gov.hu/NTCA/2.0/common/string" />
+    <xs:import namespace="http://schemas.nav.gov.hu/NTCA/2.0/common/type" />
+
+    <xs:group name="VersionGroup">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Verziózott entitás csoport</xs:documentation>
+            <xs:documentation xml:lang="en">Versioned entity group</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="version" type="xs:unsignedInt">
+                <xs:annotation>
+                    <xs:documentation xml:lang="hu">Adat verzió</xs:documentation>
+                    <xs:documentation xml:lang="en">Data version</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:group>
+    <xs:group name="AuditGroup">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Auditált entitás csoport</xs:documentation>
+            <xs:documentation xml:lang="en">Audited entity group</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="insdate" type="ntcaType:GenericTimestampNanoType">
+                <xs:annotation>
+                    <xs:documentation xml:lang="hu">Adat létrehozási dátum</xs:documentation>
+                    <xs:documentation xml:lang="en">Data creation date</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="insuser" type="ntcaType:GenericIdType">
+                <xs:annotation>
+                    <xs:documentation xml:lang="hu">Adat létrehozó felhasználó azonosító</xs:documentation>
+                    <xs:documentation xml:lang="en">Data creator user identifier</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="moddate" type="ntcaType:GenericTimestampNanoType" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation xml:lang="hu">Adat módosítási dátum</xs:documentation>
+                    <xs:documentation xml:lang="en">Data modification date</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="moduser" type="ntcaType:GenericIdType" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation xml:lang="hu">Adat módosító felhasználó azonosító</xs:documentation>
+                    <xs:documentation xml:lang="en">Data modifier user identifier</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:group>
+    <xs:group name="SessionAuditGroup">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Munkamenet auditálási csoport</xs:documentation>
+            <xs:documentation xml:lang="en">Session audit group</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="inssession" type="ntcaType:GenericIdType">
+                <xs:annotation>
+                    <xs:documentation xml:lang="hu">Adat létrehozó munkamenet azonosító</xs:documentation>
+                    <xs:documentation xml:lang="en">Data creator session identifier</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="modsession" type="ntcaType:GenericIdType" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation xml:lang="hu">Adat módosító munkamenet azonosító</xs:documentation>
+                    <xs:documentation xml:lang="en">Data modifier session identifier</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:group>
+
+    <xs:complexType name="VersionedEntityType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Verziózott entitás típusa</xs:documentation>
+        <xs:documentation xml:lang="en">Versioned entity type</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:group ref="VersionGroup"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="AuditedEntityType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Auditált entitás típusa</xs:documentation>
+            <xs:documentation xml:lang="en">Audited entity type</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:group ref="AuditGroup"/>
+            <xs:group ref="VersionGroup"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="SessionAuditedEntityType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Munkamenet auditálási entitás típusa</xs:documentation>
+            <xs:documentation xml:lang="en">Session audited entity type</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:group ref="AuditGroup"/>
+            <xs:group ref="SessionAuditGroup"/>
+            <xs:group ref="VersionGroup"/>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>

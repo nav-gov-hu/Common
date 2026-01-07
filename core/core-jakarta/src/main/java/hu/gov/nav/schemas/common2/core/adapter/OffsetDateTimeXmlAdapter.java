@@ -23,7 +23,7 @@
  * THE SOFTWARE.
  * #L%
  */
-package hu.gov.nav.schemas.common.core.adapter;
+package hu.gov.nav.schemas.common2.core.adapter;
 
 import java.time.Instant;
 import java.time.LocalDateTime;

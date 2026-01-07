@@ -1,7 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
 
-    <public publicId="http://schemas.nav.gov.hu/NTCA/1.0/common"
-        uri="maven:hu.gov.nav.schemas.common:schemas:jar::!/xsd/hu/gov/nav/schemas/NTCA/1.0/common/common.xsd" />
+    <public publicId="http://schemas.nav.gov.hu/NTCA/2.0/common/string"
+        uri="maven:hu.gov.nav.schemas.common2:schemas:jar::!/xsd/hu/gov/nav/schemas/NTCA/2.0/common/string.xsd" />
+    <public publicId="http://schemas.nav.gov.hu/NTCA/2.0/common/type"
+        uri="maven:hu.gov.nav.schemas.common2:schemas:jar::!/xsd/hu/gov/nav/schemas/NTCA/2.0/common/type.xsd" />
+    <public publicId="http://schemas.nav.gov.hu/NTCA/2.0/common/customer"
+        uri="maven:hu.gov.nav.schemas.common2:schemas:jar::!/xsd/hu/gov/nav/schemas/NTCA/2.0/common/customer.xsd" />
+    <public publicId="http://schemas.nav.gov.hu/NTCA/2.0/common/paging"
+        uri="maven:hu.gov.nav.schemas.common2:schemas:jar::!/xsd/hu/gov/nav/schemas/NTCA/2.0/common/paging.xsd" />
+    <public publicId="http://schemas.nav.gov.hu/NTCA/2.0/common/entity"
+        uri="maven:hu.gov.nav.schemas.common2:schemas:jar::!/xsd/hu/gov/nav/schemas/NTCA/2.0/common/entity.xsd" />
+    <public publicId="http://schemas.nav.gov.hu/NTCA/2.0/common/service"
+        uri="maven:hu.gov.nav.schemas.common2:schemas:jar::!/xsd/hu/gov/nav/schemas/NTCA/2.0/common/service.xsd" />
+    <public publicId="http://schemas.nav.gov.hu/NTCA/2.0/common/authservice"
+        uri="maven:hu.gov.nav.schemas.common2:schemas:jar::!/xsd/hu/gov/nav/schemas/NTCA/2.0/common/authservice.xsd" />
+
 
 </catalog>

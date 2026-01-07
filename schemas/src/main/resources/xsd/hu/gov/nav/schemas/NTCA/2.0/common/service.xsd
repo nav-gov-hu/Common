@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+# Project: NAV NTCA Common XML séma
+# Author: NAV Informatikai Intézet
+
+# Version: v2.0.0-rc.1 2026/02/12
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://schemas.nav.gov.hu/NTCA/2.0/common/service"
+    xmlns="http://schemas.nav.gov.hu/NTCA/2.0/common/service"
+    xmlns:ntcaString="http://schemas.nav.gov.hu/NTCA/2.0/common/string"
+    xmlns:ntcaType="http://schemas.nav.gov.hu/NTCA/2.0/common/type"
+    elementFormDefault="qualified" attributeFormDefault="unqualified">
+ 
+    <xs:import namespace="http://schemas.nav.gov.hu/NTCA/2.0/common/string" />
+    <xs:import namespace="http://schemas.nav.gov.hu/NTCA/2.0/common/type" />
+
+    <xs:simpleType name="ResultCodeType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Eredmény kód típus</xs:documentation>
+            <xs:documentation xml:lang="en">Result code type</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="ntcaString:AtomicStringType7">
+            <xs:enumeration value="ERROR">
+                <xs:annotation>
+                    <xs:documentation xml:lang="hu">Hiba</xs:documentation>
+                    <xs:documentation xml:lang="en">Error</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="WARN">
+                <xs:annotation>
+                    <xs:documentation xml:lang="hu">Figyelmeztetés</xs:documentation>
+                    <xs:documentation xml:lang="en">Warn</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="INFO">
+                <xs:annotation>
+                    <xs:documentation xml:lang="hu">Tájékoztatás</xs:documentation>
+                    <xs:documentation xml:lang="en">Information</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="SUCCESS">
+                <xs:annotation>
+                    <xs:documentation xml:lang="hu">Sikeres</xs:documentation>
+                    <xs:documentation xml:lang="en">Success</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- COMPLEX TYPES -->
+    <xs:complexType name="RootRequestType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Szülő kérés típus. Minden kérés API leíróval rendelkező XSD alapja. Célja hogy lehetőséget adjon olyan
+                API-k beillesztésére a rendszerbe, melyeknek nem keletkezett XSD leírója és nem a standardizált tartalmat struktúrát használják.</xs:documentation>
+            <xs:documentation xml:lang="en"> Parent request type. The basis of every API descriptor with an XSD. Its purpose is to allow the insertion
+                of APIs into the system that do not have an XSD descriptor and do not use the standardized content structure.</xs:documentation>
+        </xs:annotation>
+    </xs:complexType>
+    <xs:complexType name="RootResultType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Szülő eredmény típus. Minden eredmény API leíróval rendelkező XSD alapja. Célja hogy lehetőséget adjon
+                olyan API-k beillesztésére a rendszerbe, melyeknek nem keletkezett XSD leírója és nem a standardizált tartalmat struktúrát használják.</xs:documentation>
+            <xs:documentation xml:lang="en"> Parent result type. The basis of every API descriptor with an XSD. Its purpose is to allow the insertion
+                of APIs into the system that do not have an XSD descriptor and do not use the standardized content structure.</xs:documentation>
+        </xs:annotation>
+    </xs:complexType>
+
+    <xs:complexType name="ContextType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Kommunikáció általános adatai típus.</xs:documentation>
+            <xs:documentation xml:lang="en">Communication general data type.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="requestId" type="ntcaType:GenericIdType">
+                <xs:annotation>
+                    <xs:documentation xml:lang="hu">A hívás azonosítója, elvárt hogy kliens oldalon egyedi legyen.</xs:documentation>
+                    <xs:documentation xml:lang="en">The call identifier, expected to be unique on the client side.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="timestamp" type="ntcaType:GenericTimestampNanoType">
+                <xs:annotation>
+                    <xs:documentation xml:lang="hu">A hívás kliens időpontja.</xs:documentation>
+                    <xs:documentation xml:lang="en">The call client time.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="BaseRequestType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Általános kérés típus.</xs:documentation>
+            <xs:documentation xml:lang="en">General request type.</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="RootRequestType">
+                <xs:sequence>
+                    <xs:element name="context" type="ContextType">
+                        <xs:annotation>
+                            <xs:documentation xml:lang="hu">A kérés általános adatai.</xs:documentation>
+                            <xs:documentation xml:lang="en">The general data of the request.</xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="BaseResultType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Általános eredmény típus.</xs:documentation>
+            <xs:documentation xml:lang="en">General result type.</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="RootResultType">
+                <xs:sequence>
+                    <xs:element name="context" type="ContextType">
+                        <xs:annotation>
+                            <xs:documentation xml:lang="hu">Az eredmény általános adatai.</xs:documentation>
+                            <xs:documentation xml:lang="en">The general data of the result.</xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                    <xs:element name="resultCode" type="ResultCodeType">
+                        <xs:annotation>
+                            <xs:documentation xml:lang="hu">Az eredmény kódja, a hívás sikerességét jelzi.</xs:documentation>
+                            <xs:documentation xml:lang="en">The result code indicates the success of the call.</xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                    <xs:element name="message" type="ntcaString:AtomicStringType4000" minOccurs="0">
+                        <xs:annotation>
+                            <xs:documentation xml:lang="hu">Az eredmény üzenete.</xs:documentation>
+                            <xs:documentation xml:lang="en"> The result message.</xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="BaseResponseType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Általános válasz típus.</xs:documentation>
+            <xs:documentation xml:lang="en">General response type.</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="BaseResultType" />
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="BaseErrorResultType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Általános hiba eredmény típus.</xs:documentation>
+            <xs:documentation xml:lang="en">General error result type.</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="BaseResultType">
+                <xs:sequence>
+                    <xs:element name="errorCode" type="ntcaString:SimpleText100NotBlankType">
+                        <xs:annotation>
+                            <xs:documentation xml:lang="hu">Keletkezett hiba kód, típus.</xs:documentation>
+                            <xs:documentation xml:lang="en">Generated error code, type.</xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                    <xs:element name="className" type="ntcaString:SimpleText512NotBlankType" minOccurs="0">
+                        <xs:annotation>
+                            <xs:documentation xml:lang="hu">Osztály neve ahol keletkezett a hiba. Éles környezeteken nics használva.</xs:documentation>
+                            <xs:documentation xml:lang="en">Class name where the error occurred. Not used in production environments.</xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                    <xs:element name="exception" type="ntcaType:ExceptionType" minOccurs="0">
+                        <xs:annotation>
+                            <xs:documentation xml:lang="hu">Keletkezett kivétel stacktrace. Éles környezeteken nics használva.</xs:documentation>
+                            <xs:documentation xml:lang="en">Generated exception stacktrace. Not used in production environments.</xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                    <xs:element name="service" type="ntcaString:SimpleText200NotBlankType" minOccurs="0">
+                        <xs:annotation>
+                            <xs:documentation xml:lang="hu">Service neve ahol keletkezett a hiba. Éles környezeteken nics használva.</xs:documentation>
+                            <xs:documentation xml:lang="en">Service name where the error occurred. Not used in production environments.</xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                    <xs:element name="causedBy" type="BaseErrorResultType" minOccurs="0">
+                        <xs:annotation>
+                            <xs:documentation xml:lang="hu">A hiba okozója, a hiba láncolatban a következő elem. Éles környezeteken nics használva.</xs:documentation>
+                            <xs:documentation xml:lang="en">The cause of the error, the next element in the error chain. Not used in production
+                                environments.</xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="DtoValidationType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">DTO validációs hiba típus.</xs:documentation>
+            <xs:documentation xml:lang="en">DTO validation error type.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="field" type="ntcaString:SimpleText100NotBlankType" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation xml:lang="hu">A probléma mezője.</xs:documentation>
+                    <xs:documentation xml:lang="en">The field of the problem.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="error" type="ntcaString:SimpleText1024NotBlankType" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation xml:lang="hu">A probléma leírása.</xs:documentation>
+                    <xs:documentation xml:lang="en">Description of the problem.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="lineNumber" type="xs:int" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation xml:lang="hu">A probléma forrásának sora.</xs:documentation>
+                    <xs:documentation xml:lang="en">The line of the source of the problem.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="columnNumber" type="xs:int" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation xml:lang="hu">A probléma forrásának oszlopa.</xs:documentation>
+                    <xs:documentation xml:lang="en">The column of the source of the problem.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="TechnicalErrorResponseType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Technikai hiba válasz típus.</xs:documentation>
+            <xs:documentation xml:lang="en">Technical error response type.</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="BaseErrorResultType" />
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="BusinessErrorResponseType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Üzleti hiba válasz típus.</xs:documentation>
+            <xs:documentation xml:lang="en">Business error response type.</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="BaseErrorResultType" />
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="InvalidRequestResponseType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Érvénytelen kérés válasz típus.</xs:documentation>
+            <xs:documentation xml:lang="en">Invalid request response type.</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="BaseErrorResultType">
+                <xs:sequence>
+                    <xs:element name="error" type="DtoValidationType" minOccurs="0" maxOccurs="unbounded">
+                        <xs:annotation>
+                            <xs:documentation xml:lang="hu">A DTO validációs hiba.</xs:documentation>
+                            <xs:documentation xml:lang="en">The DTO validation error.</xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <!-- ROOT ELEMENTS -->
+    <xs:element name="TechnicalErrorResponse">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Technikai hiba válasz.</xs:documentation>
+            <xs:documentation xml:lang="en">Technical error response.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="TechnicalErrorResponseType" />
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="BusinessErrorResponse">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Üzleti hiba válasz.</xs:documentation>
+            <xs:documentation xml:lang="en">Business error response.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="BusinessErrorResponseType" />
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="InvalidRequestResponse">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Érvénytelen kérés válasz.</xs:documentation>
+            <xs:documentation xml:lang="en">Invalid request response.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="InvalidRequestResponseType" />
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="BaseRequest">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Általános kérés.</xs:documentation>
+            <xs:documentation xml:lang="en">General request.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="BaseRequestType" />
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="BaseResponse">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Általános válasz.</xs:documentation>
+            <xs:documentation xml:lang="en">General response.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="BaseResponseType" />
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>

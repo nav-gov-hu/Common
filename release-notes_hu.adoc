@@ -1,0 +1,32 @@
+= Verziótörténet
+
+== 2.0.0
+NAV NTCA Common XML séma
+
+* Schema namespace-ek frissítve a következőre: hu.gov.nav.schemas.NTCA.2.0
+* Az 1.0.0 verzió egyetlen common.xsd fájlját felbontottuk több kisebb,
+funkcionálisan elkülöníthető XSD fájlra a következő logika alapján:
+** string.xsd - általános karakterlánc típusok. Sok karakterlánc típus itt lett definiálva, 1-10000 karakter hosszúságig különböző lépésekben. Valamint tartalmazza az 1 karakter típusokat.
+** type.xsd - általános típusok
+** customer.xsd - ügyfél azonosításhoz kapcsolódó típusok
+** entity.xsd - entitás azonosításhoz kapcsolódó típusok
+** paging.xsd - lapozáshoz kapcsolódó típusok
+** service.xsd - szolgáltatásokhoz kapcsolódó típusok
+** authservice.xsd - autentikációs szolgáltatásokhoz kapcsolódó típusok
+
+Típus változások az NTCA 1.0.0 verzióról 2.0.0 verzióra:
+
+* átnevezett GenericDateType -> GenericDateUtcType (type.xsd) - dátum formátum megváltozott ISO 8601-re UTC időzónával (pl. 2024-06-30Z)
+* új GenericDateType (type.xsd) - dátum formátum megváltozott ISO 8601-re időzóna nélkül (pl. 2024-06-30)
+* GenericTimestampType -> GenericTimestampMilliType (type.xsd)
+* BusinessResultCodeType -> ResultCodeType (service.xsd), hozzáadva "SUCCESS" érték
+* EntityIdType -> GenericIdType (type.xsd) bővítve 36 karakterig
+* BasicHeaderType -> ContextType (service.xsd) - csak requestId és timestamp mezők
+* BasicRequestType -> BaseRequestType (service.xsd) - csak ContextType element
+* BasicResponseType, BasicResultType -> BaseResponseType, BaseResultType (service.xsd) - csak ContextType element
+* GeneralErrorHeaderResponseType, TechnicalValidationResultType, GeneralErrorHeaderResponse, GeneralExceptionResponse -> BaseErrorResultType (service.xsd) újragondolva struktúrába
+* ResponsePageType -> PaginationResponseType (paging.xsd)
+* VatCodeType (customer.xsd) bővítve "9"-ig
+* UserHeaderType-> AuthenticationType (authservice.xsd)
+* RequestPageType-> PageNumberType (paging.xsd)
+* Megszüntetett típusok: FunctionCodeType, TechnicalResultCodeType, GeneralErrorHeaderResponseType, LocalizationType

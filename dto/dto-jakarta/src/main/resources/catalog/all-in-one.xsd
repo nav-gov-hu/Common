@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsd:schema
     xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-    xmlns="http://catalog.schemas.nav.gov.hu/NTCA/1.0/common/all-in-one"
-    targetNamespace="http://catalog.schemas.nav.gov.hu/NTCA/1.0/common/all-in-one"
+    xmlns="http://catalog.schemas.nav.gov.hu/NTCA/2.0/common/all-in-one"
+    targetNamespace="http://catalog.schemas.nav.gov.hu/NTCA/2.0/common/all-in-one"
     elementFormDefault="qualified" attributeFormDefault="unqualified">
 
-    <xsd:import namespace="http://schemas.nav.gov.hu/NTCA/1.0/common" />
+    <xsd:import namespace="http://schemas.nav.gov.hu/NTCA/2.0/common/string" />
+    <xsd:import namespace="http://schemas.nav.gov.hu/NTCA/2.0/common/type" />
+    <xsd:import namespace="http://schemas.nav.gov.hu/NTCA/2.0/common/customer" />
+    <xsd:import namespace="http://schemas.nav.gov.hu/NTCA/2.0/common/paging" />
+    <xsd:import namespace="http://schemas.nav.gov.hu/NTCA/2.0/common/entity" />
+    <xsd:import namespace="http://schemas.nav.gov.hu/NTCA/2.0/common/service" />
+    <xsd:import namespace="http://schemas.nav.gov.hu/NTCA/2.0/common/authservice" />
 
 </xsd:schema>

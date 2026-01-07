@@ -1,0 +1,3776 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+# Project: NAV NTCA Common XML séma
+# Author: NAV Informatikai Intézet
+
+# Version: v2.0.0-rc.1 2026/02/12
+-->
+<xs:schema xmlns="http://schemas.nav.gov.hu/NTCA/2.0/common/string" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://schemas.nav.gov.hu/NTCA/2.0/common/string" elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+    <!-- Atomi típusok / Atomic types -->
+    <xs:simpleType name="AtomicStringType1">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 1 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 1 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:length value="1"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType2">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 2 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 2 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="2" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType3">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 3 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 3 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="3" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType4">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 4 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 4 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="4" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType5">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 5 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 5 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="5" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType6">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 6 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 6 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="6" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType7">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 7 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 7 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="7" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType8">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 8 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 8 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="8" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType9">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 9 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 9 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="9" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType10">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 10 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 10 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="10" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType11">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 11 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 11 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="11" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType12">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 12 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 12 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="12" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType13">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 13 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 13 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="13" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType14">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 14 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 14 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="14" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType15">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 15 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 15 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="15" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType16">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 16 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 16 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="16" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType17">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 17 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 17 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="17" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType18">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 18 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 18 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="18" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType19">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 19 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 19 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="19" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType20">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 20 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 20 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="20" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType21">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 21 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 21 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="21" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType22">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 22 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 22 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="22" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType23">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 23 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 23 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="23" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType24">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 24 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 24 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="24" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType25">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 25 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 25 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="25" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType26">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 26 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 26 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="26" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType27">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 27 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 27 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="27" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType28">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 28 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 28 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="28" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType29">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 29 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 29 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="29" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType30">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 30 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 30 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="30" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType31">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 31 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 31 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="31" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType32">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 32 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 32 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="32" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType33">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 33 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 33 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="33" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType34">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 34 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 34 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="34" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType35">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 35 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 35 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="35" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType36">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 36 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 36 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="36" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType37">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 37 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 37 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="37" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType38">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 38 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 38 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="38" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType39">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 39 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 39 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="39" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType40">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 40 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 40 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="40" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType41">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 41 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 41 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="41" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType42">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 42 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 42 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="42" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType43">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 43 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 43 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="43" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType44">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 44 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 44 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="44" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType45">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 45 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 45 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="45" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType46">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 46 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 46 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="46" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType47">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 47 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 47 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="47" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType48">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 48 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 48 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="48" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType49">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 49 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 49 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="49" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType50">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 50 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 50 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType51">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 51 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 51 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="51" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType52">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 52 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 52 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="52" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType53">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 53 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 53 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="53" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType54">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 54 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 54 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="54" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType55">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 55 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 55 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="55" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType56">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 56 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 56 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="56" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType57">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 57 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 57 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="57" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType58">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 58 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 58 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="58" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType59">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 59 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 59 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="59" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType60">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 60 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 60 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="60" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType61">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 61 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 61 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="61" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType62">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 62 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 62 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="62" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType63">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 63 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 63 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="63" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType64">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 64 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 64 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="64" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType65">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 65 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 65 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="65" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType66">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 66 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 66 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="66" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType67">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 67 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 67 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="67" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType68">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 68 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 68 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="68" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType69">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 69 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 69 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="69" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType70">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 70 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 70 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="70" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType71">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 71 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 71 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="71" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType72">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 72 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 72 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="72" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType73">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 73 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 73 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="73" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType74">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 74 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 74 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="74" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType75">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 75 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 75 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="75" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType76">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 76 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 76 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="76" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType77">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 77 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 77 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="77" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType78">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 78 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 78 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="78" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType79">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 79 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 79 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="79" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType80">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 80 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 80 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="80" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType81">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 81 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 81 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="81" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType82">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 82 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 82 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="82" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType83">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 83 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 83 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="83" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType84">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 84 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 84 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="84" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType85">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 85 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 85 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="85" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType86">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 86 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 86 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="86" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType87">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 87 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 87 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="87" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType88">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 88 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 88 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="88" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType89">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 89 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 89 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="89" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType90">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 90 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 90 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="90" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType91">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 91 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 91 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="91" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType92">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 92 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 92 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="92" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType93">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 93 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 93 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="93" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType94">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 94 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 94 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="94" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType95">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 95 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 95 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="95" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType96">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 96 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 96 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="96" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType97">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 97 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 97 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="97" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType98">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 98 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 98 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="98" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType99">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 99 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 99 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="99" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType100">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 100 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 100 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="100" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType105">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 105 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 105 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="105" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType110">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 110 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 110 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="110" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType115">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 115 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 115 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="115" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType120">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 120 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 120 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="120" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType125">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 125 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 125 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="125" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType127">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 127 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 127 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="127" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType128">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 128 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 128 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="128" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType130">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 130 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 130 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="130" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType135">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 135 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 135 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="135" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType140">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 140 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 140 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="140" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType145">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 145 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 145 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="145" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType150">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 150 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 150 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="150" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType155">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 155 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 155 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="155" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType160">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 160 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 160 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="160" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType165">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 165 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 165 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="165" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType170">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 170 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 170 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="170" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType175">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 175 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 175 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="175" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType180">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 180 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 180 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="180" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType185">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 185 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 185 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="185" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType190">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 190 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 190 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="190" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType195">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 195 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 195 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="195" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType200">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 200 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 200 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="200" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType210">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 210 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 210 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="210" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType220">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 220 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 220 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="220" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType230">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 230 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 230 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="230" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType240">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 240 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 240 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="240" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType250">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 250 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 250 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="250" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType255">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 255 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 255 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="255" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType256">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 256 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 256 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="256" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType260">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 260 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 260 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="260" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType270">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 270 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 270 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="270" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType280">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 280 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 280 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="280" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType290">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 290 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 290 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="290" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType300">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 300 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 300 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="300" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType350">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 350 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 350 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="350" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType384">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 384 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 384 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="384" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType400">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 400 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 400 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="400" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType450">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 450 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 450 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="450" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType500">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 500 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 500 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="500" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType512">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 512 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 512 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="512" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType550">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 550 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 550 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="550" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType600">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 600 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 600 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="600" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType650">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 650 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 650 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="650" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType700">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 700 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 700 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="700" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType750">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 750 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 750 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="750" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType768">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 768 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 768 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="768" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType800">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 800 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 800 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="800" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType850">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 850 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 850 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="850" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType900">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 900 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 900 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="900" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType950">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 950 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 950 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="950" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType1000">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 1000 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 1000 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="1000" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType1024">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 1024 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 1024 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="1024" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType1100">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 1100 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 1100 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="1100" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType1200">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 1200 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 1200 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="1200" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType1300">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 1300 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 1300 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="1300" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType1400">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 1400 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 1400 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="1400" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType1500">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 1500 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 1500 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="1500" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType1536">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 1536 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 1536 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="1536" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType1600">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 1600 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 1600 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="1600" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType1700">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 1700 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 1700 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="1700" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType1800">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 1800 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 1800 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="1800" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType1900">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 1900 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 1900 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="1900" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType2000">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 2000 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 2000 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="2000" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType2048">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 2048 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 2048 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="2048" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType2100">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 2100 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 2100 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="2100" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType2200">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 2200 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 2200 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="2200" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType2300">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 2300 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 2300 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="2300" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType2400">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 2400 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 2400 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="2400" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType2500">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 2500 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 2500 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="2500" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType2600">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 2600 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 2600 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="2600" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType2700">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 2700 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 2700 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="2700" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType2800">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 2800 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 2800 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="2800" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType2900">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 2900 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 2900 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="2900" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType3000">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 3000 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 3000 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="3000" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType3072">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 3072 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 3072 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="3072" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType3100">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 3100 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 3100 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="3100" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType3200">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 3200 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 3200 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="3200" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType3300">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 3300 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 3300 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="3300" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType3400">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 3400 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 3400 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="3400" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType3500">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 3500 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 3500 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="3500" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType3600">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 3600 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 3600 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="3600" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType3700">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 3700 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 3700 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="3700" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType3800">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 3800 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 3800 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="3800" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType3900">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 3900 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 3900 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="3900" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType4000">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 4000 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 4000 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="4000" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType4096">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 4096 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 4096 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="4096" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType8192">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 8192 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 8192 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="8192" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="AtomicStringType10000">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Atomi string típus 10000 hosszra</xs:documentation>
+            <xs:documentation xml:lang="en">Atomic string type for 10000 length</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="10000" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- Simple Text Types -->
+    <xs:simpleType name="SimpleText2NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 2 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 2 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType2">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText3NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 3 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 3 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType3">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText4NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 4 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 4 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType4">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText5NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 5 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 5 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType5">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText6NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 6 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 6 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType6">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText7NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 7 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 7 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType7">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText8NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 8 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 8 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType8">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText9NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 9 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 9 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType9">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText10NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 10 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 10 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType10">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText11NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 11 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 11 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType11">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText12NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 12 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 12 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType12">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText13NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 13 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 13 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType13">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText14NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 14 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 14 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType14">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText15NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 15 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 15 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType15">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText16NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 16 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 16 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType16">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText17NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 17 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 17 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType17">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText18NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 18 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 18 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType18">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText19NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 19 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 19 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType19">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText20NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 20 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 20 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType20">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText21NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 21 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 21 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType21">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText22NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 22 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 22 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType22">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText23NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 23 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 23 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType23">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText24NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 24 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 24 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType24">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText25NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 25 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 25 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType25">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText26NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 26 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 26 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType26">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText27NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 27 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 27 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType27">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText28NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 28 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 28 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType28">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText29NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 29 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 29 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType29">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText30NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 30 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 30 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType30">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText31NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 31 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 31 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType31">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText32NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 32 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 32 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType32">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText33NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 33 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 33 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType33">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText34NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 34 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 34 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType34">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText35NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 35 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 35 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType35">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText36NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 36 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 36 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType36">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText37NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 37 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 37 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType37">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText38NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 38 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 38 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType38">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText39NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 39 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 39 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType39">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText40NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 40 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 40 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType40">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText41NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 41 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 41 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType41">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText42NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 42 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 42 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType42">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText43NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 43 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 43 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType43">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText44NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 44 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 44 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType44">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText45NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 45 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 45 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType45">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText46NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 46 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 46 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType46">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText47NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 47 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 47 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType47">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText48NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 48 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 48 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType48">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText49NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 49 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 49 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType49">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText50NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 50 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 50 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType50">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText51NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 51 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 51 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType51">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText52NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 52 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 52 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType52">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText53NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 53 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 53 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType53">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText54NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 54 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 54 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType54">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText55NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 55 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 55 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType55">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText56NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 56 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 56 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType56">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText57NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 57 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 57 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType57">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText58NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 58 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 58 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType58">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText59NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 59 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 59 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType59">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText60NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 60 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 60 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType60">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText61NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 61 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 61 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType61">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText62NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 62 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 62 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType62">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText63NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 63 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 63 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType63">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText64NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 64 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 64 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType64">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText65NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 65 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 65 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType65">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText66NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 66 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 66 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType66">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText67NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 67 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 67 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType67">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText68NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 68 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 68 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType68">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText69NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 69 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 69 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType69">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText70NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 70 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 70 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType70">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText71NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 71 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 71 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType71">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText72NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 72 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 72 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType72">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText73NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 73 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 73 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType73">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText74NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 74 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 74 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType74">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText75NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 75 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 75 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType75">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText76NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 76 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 76 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType76">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText77NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 77 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 77 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType77">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText78NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 78 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 78 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType78">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText79NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 79 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 79 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType79">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText80NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 80 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 80 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType80">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText81NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 81 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 81 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType81">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText82NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 82 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 82 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType82">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText83NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 83 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 83 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType83">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText84NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 84 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 84 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType84">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText85NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 85 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 85 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType85">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText86NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 86 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 86 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType86">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText87NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 87 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 87 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType87">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText88NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 88 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 88 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType88">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText89NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 89 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 89 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType89">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText90NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 90 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 90 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType90">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText91NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 91 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 91 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType91">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText92NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 92 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 92 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType92">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText93NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 93 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 93 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType93">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText94NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 94 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 94 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType94">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText95NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 95 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 95 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType95">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText96NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 96 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 96 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType96">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText97NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 97 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 97 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType97">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText98NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 98 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 98 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType98">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText99NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 99 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 99 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType99">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText100NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 100 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 100 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType100">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText105NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 105 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 105 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType105">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText110NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 110 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 110 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType110">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText115NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 115 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 115 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType115">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText120NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 120 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 120 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType120">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText125NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 125 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 125 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType125">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText127NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 127 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 127 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType127">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText128NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 128 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 128 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType128">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText130NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 130 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 130 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType130">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText135NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 135 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 135 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType135">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText140NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 140 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 140 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType140">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText145NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 145 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 145 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType145">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText150NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 150 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 150 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType150">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText155NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 155 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 155 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType155">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText160NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 160 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 160 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType160">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText165NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 165 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 165 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType165">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText170NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 170 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 170 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType170">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText175NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 175 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 175 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType175">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText180NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 180 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 180 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType180">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText185NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 185 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 185 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType185">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText190NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 190 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 190 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType190">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText195NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 195 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 195 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType195">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText200NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 200 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 200 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType200">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText210NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 210 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 210 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType210">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText220NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 220 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 220 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType220">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText230NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 230 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 230 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType230">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText240NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 240 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 240 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType240">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText250NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 250 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 250 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType250">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText255NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 255 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 255 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType255">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText256NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 256 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 256 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType256">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText260NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 260 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 260 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType260">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText270NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 270 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 270 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType270">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText280NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 280 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 280 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType280">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText290NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 290 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 290 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType290">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText300NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 300 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 300 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType300">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText350NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 350 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 350 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType350">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText384NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 384 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 384 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType384">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText400NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 400 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 400 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType400">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText450NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 450 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 450 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType450">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText500NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 500 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 500 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType500">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText512NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 512 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 512 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType512">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText550NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 550 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 550 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType550">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText600NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 600 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 600 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType600">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText650NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 650 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 650 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType650">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText700NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 700 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 700 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType700">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText750NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 750 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 750 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType750">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText768NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 768 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 768 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType768">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText800NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 800 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 800 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType800">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText850NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 850 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 850 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType850">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText900NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 900 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 900 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType900">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText950NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 950 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 950 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType950">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText1000NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 1000 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 1000 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType1000">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText1024NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 1024 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 1024 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType1024">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText1100NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 1100 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 1100 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType1100">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText1200NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 1200 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 1200 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType1200">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText1300NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 1300 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 1300 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType1300">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText1400NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 1400 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 1400 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType1400">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText1500NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 1500 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 1500 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType1500">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText1536NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 1536 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 1536 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType1536">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText1600NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 1600 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 1600 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType1600">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText1700NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 1700 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 1700 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType1700">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText1800NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 1800 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 1800 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType1800">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText1900NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 1900 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 1900 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType1900">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText2000NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 2000 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 2000 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType2000">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText2048NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 2048 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 2048 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType2048">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText2100NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 2100 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 2100 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType2100">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText2200NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 2200 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 2200 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType2200">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText2300NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 2300 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 2300 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType2300">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText2400NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 2400 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 2400 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType2400">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText2500NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 2500 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 2500 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType2500">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText2600NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 2600 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 2600 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType2600">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText2700NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 2700 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 2700 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType2700">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText2800NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 2800 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 2800 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType2800">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText2900NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 2900 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 2900 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType2900">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText3000NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 3000 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 3000 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType3000">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText3072NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 3072 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 3072 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType3072">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText3100NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 3100 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 3100 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType3100">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText3200NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 3200 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 3200 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType3200">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText3300NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 3300 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 3300 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType3300">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText3400NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 3400 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 3400 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType3400">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText3500NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 3500 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 3500 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType3500">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText3600NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 3600 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 3600 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType3600">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText3700NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 3700 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 3700 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType3700">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText3800NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 3800 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 3800 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType3800">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText3900NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 3900 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 3900 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType3900">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText4000NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 4000 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 4000 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType4000">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText4096NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 4096 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 4096 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType4096">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText8192NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 8192 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 8192 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType8192">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SimpleText10000NotBlankType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Legfeljebb 10000 karaktert tartalmazó szöveg típus (nem lehet üres és csak whitespace karaktereket
+                tartalmazó)</xs:documentation>
+            <xs:documentation xml:lang="en">String of maximum 10000 characters (not blank and not only whitespace)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType10000">
+            <xs:pattern value=".*[^\s].*" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- Karakter típusok / Character types -->
+    <xs:simpleType name="AlphanumericCharType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Alfanumerikus karakter típus</xs:documentation>
+            <xs:documentation xml:lang="en">Alphanumeric character type</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType1">
+            <xs:pattern value="[0-9A-Za-z]"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="HuAlphanumericCharType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Alfanumerikus karakter típus magyar ékezetes karakterekkel</xs:documentation>
+            <xs:documentation xml:lang="en">Alphanumeric character type with Hungarian accented characters</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="AtomicStringType1">
+            <xs:pattern value="[0-9A-Za-zÁÉÍÓÖŐÚÜŰáéíóöőúüű]"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>
