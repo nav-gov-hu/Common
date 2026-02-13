@@ -25,9 +25,9 @@ DTO generation itself is based on XSD Catalog, which enables centralized managem
 [source, xml]
 ----
 <!-- schemaLocation solution -->
-<xs:import namespace="http://schemas.nav.gov.hu/NTCA/1.0/common" schemaLocation="./../nav-common"/>
+<xs:import namespace="http://schemas.nav.gov.hu/NTCA/2.0/common/string" schemaLocation="./../nav-string"/>
 <!-- catalog solution -->
-<xs:import namespace="http://schemas.nav.gov.hu/NTCA/1.0/common"/> + catalog file
+<xs:import namespace="http://schemas.nav.gov.hu/NTCA/2.0/common"/> + catalog file
 ----
 As an example, see the `dto/dto-jakarta/src/main/resources/catalog/catalog.cat` + `dto/dto-jakarta/src/main/resources/catalog/all-in-one.xsd` files, and use `dto/dto-jakarta/pom.xml` for generation.
 Generation is done using the https://github.com/highsource/jaxb-tools Maven plugin.
@@ -51,7 +51,7 @@ The project is Maven-based, so a Maven environment is required for usage.
 [source, xml]
 ----
 <dependency>
-    <groupId>hu.gov.nav.schemas.common</groupId>
+    <groupId>hu.gov.nav.schemas.common2</groupId>
     <artifactId>schemas</artifactId>
     <version>VERSION</version>
 </dependency>
@@ -61,7 +61,7 @@ The project is Maven-based, so a Maven environment is required for usage.
 [source, xml]
 ----
 <dependency>
-    <groupId>hu.gov.nav.schemas.common</groupId>
+    <groupId>hu.gov.nav.schemas.common2</groupId>
     <artifactId>core-jakarta</artifactId>
     <version>VERSION</version>
 </dependency>
@@ -71,8 +71,31 @@ The project is Maven-based, so a Maven environment is required for usage.
 [source, xml]
 ----
 <dependency>
-    <groupId>hu.gov.nav.schemas.common</groupId>
+    <groupId>hu.gov.nav.schemas.common2</groupId>
     <artifactId>dto-jakarta</artifactId>
     <version>VERSION</version>
+</dependency>
+----
+
+=== 2.1) Version management
+
+Due to the nature of the project, it is important that different projects remain compatible with each other.
+Therefore, it may happen that an imported schema uses an older version in one project, while another schema uses a newer version.
+To avoid conflicts, the project's groupId contains the major version number, so the versions remain separated.
+
+.Multiple versions used in parallel
+[source, xml]
+----
+<!-- using an older version -->
+<dependency>
+    <groupId>hu.gov.nav.schemas.common</groupId>
+    <artifactId>schemas</artifactId>
+    <version>1.0.0</version>
+</dependency>
+<!-- using a newer version -->
+<dependency>
+    <groupId>hu.gov.nav.schemas.common2</groupId>
+    <artifactId>schemas</artifactId>
+    <version>2.0.0</version>
 </dependency>
 ----

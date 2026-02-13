@@ -1,21 +1,23 @@
 <?xml version="1.0"?>
 <jaxb:bindings version="3.0"
+    xmlns:ntcaType="http://schemas.nav.gov.hu/NTCA/2.0/common/type"
     xmlns:jaxb="https://jakarta.ee/xml/ns/jaxb"
     xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
     jaxb:extensionBindingPrefixes="xjc">
 
     <jaxb:globalBindings generateIsSetMethod="true">
-        <xjc:serializable uid="1" />
-
+        <xjc:javaType xmlType="ntcaType:GenericDateUtcType"
+            name="java.time.LocalDate"
+            adapter="hu.gov.nav.schemas.common2.core.adapter.UtcLocalDateXmlAdapter" />
         <xjc:javaType xmlType="xsd:date"
             name="java.time.LocalDate"
-            adapter="hu.gov.nav.schemas.common.core.adapter.LocalDateXmlAdapter" />
+            adapter="hu.gov.nav.schemas.common2.core.adapter.LocalDateXmlAdapter" />
         <xjc:javaType xmlType="xsd:time"
             name="java.time.OffsetTime"
-            adapter="hu.gov.nav.schemas.common.core.adapter.UtcOffsetTimeXmlAdapter" />
+            adapter="hu.gov.nav.schemas.common2.core.adapter.UtcOffsetTimeXmlAdapter" />
         <xjc:javaType xmlType="xsd:dateTime"
             name="java.time.OffsetDateTime"
-            adapter="hu.gov.nav.schemas.common.core.adapter.UtcOffsetDateTimeXmlAdapter" />
+            adapter="hu.gov.nav.schemas.common2.core.adapter.UtcOffsetDateTimeXmlAdapter" />
     </jaxb:globalBindings>
 
 </jaxb:bindings>

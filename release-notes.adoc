@@ -1,0 +1,32 @@
+= Release notes
+
+== 2.0.0
+NAV NTCA Common XML Schema
+
+* Schema namespaces updated to: hu.gov.nav.schemas.NTCA.2.0
+* The single common.xsd file from version 1.0.0 has been split into multiple smaller,
+functionally separable XSD files based on the following logic:
+** string.xsd - general string types. Many string types are defined here, ranging from 1 to 10000 characters in length in different steps. It also contains the 1 character types.
+** type.xsd - general types
+** customer.xsd - types related to customer identification
+** entity.xsd - types related to entity identification
+** paging.xsd - types related to pagination
+** service.xsd - types related to services
+** authservice.xsd - types related to authentication services
+
+Type changes from NTCA 1.0.0 to 2.0.0:
+
+* renamed GenericDateType -> GenericDateUtcType (type.xsd) - date format changed to ISO 8601 with UTC timezone (e.g. 2024-06-30Z)
+* new GenericDateType (type.xsd) - date format changed to ISO 8601 without timezone (e.g. 2024-06-30)
+* GenericTimestampType -> GenericTimestampMilliType (type.xsd)
+* BusinessResultCodeType -> ResultCodeType (service.xsd), added "SUCCESS" value
+* EntityIdType -> GenericIdType (type.xsd) extended to 36 characters
+* BasicHeaderType -> ContextType (service.xsd) - only requestId and timestamp fields
+* BasicRequestType -> BaseRequestType (service.xsd) - only ContextType element
+* BasicResponseType, BasicResultType -> BaseResponseType, BaseResultType (service.xsd) - only ContextType element
+* GeneralErrorHeaderResponseType, TechnicalValidationResultType, GeneralErrorHeaderResponse, GeneralExceptionResponse -> BaseErrorResultType (service.xsd) redesigned structure
+* ResponsePageType -> PaginationResponseType (paging.xsd)
+* VatCodeType (customer.xsd) extended to "9"
+* UserHeaderType-> AuthenticationType (authservice.xsd)
+* RequestPageType-> PageNumberType (paging.xsd)
+* Megszüntetett típusok: FunctionCodeType, TechnicalResultCodeType, GeneralErrorHeaderResponseType, LocalizationType

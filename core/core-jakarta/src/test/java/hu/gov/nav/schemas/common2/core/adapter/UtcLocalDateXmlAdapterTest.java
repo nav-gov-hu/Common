@@ -23,7 +23,7 @@
  * THE SOFTWARE.
  * #L%
  */
-package hu.gov.nav.schemas.common.core.adapter;
+package hu.gov.nav.schemas.common2.core.adapter;
 
 import java.time.DateTimeException;
 import java.time.LocalDate;
@@ -33,10 +33,9 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
-@DisplayName("LocalDateXmlAdapter Tests")
-class LocalDateXmlAdapterTest {
+class UtcLocalDateXmlAdapterTest {
 
-    private final LocalDateXmlAdapter adapter = new LocalDateXmlAdapter();
+    private final UtcLocalDateXmlAdapter adapter = new UtcLocalDateXmlAdapter();
 
     @DisplayName("unmarshal Tests")
     @Nested
@@ -63,6 +62,13 @@ class LocalDateXmlAdapterTest {
         }
 
         @Test
+        void isoUtcDate() throws Exception {
+            String isoDate = "2025-08-25Z";
+            LocalDate expected = LocalDate.of(2025, 8, 25);
+            Assertions.assertThat(adapter.unmarshal(isoDate)).isEqualTo(expected);
+        }
+
+        @Test
         void isoDateWithOffset() throws Exception {
             String isoDateWithOffset = "2025-08-25+02:00";
             LocalDate expected = LocalDate.of(2025, 8, 25);
@@ -81,7 +87,7 @@ class LocalDateXmlAdapterTest {
         @Test
         void validLocalDate() throws Exception {
             LocalDate date = LocalDate.of(2022, 5, 15);
-            Assertions.assertThat(adapter.marshal(date)).isEqualTo("2022-05-15");
+            Assertions.assertThat(adapter.marshal(date)).isEqualTo("2022-05-15Z");
         }
 
         @Test
@@ -91,4 +97,5 @@ class LocalDateXmlAdapterTest {
                     .isInstanceOf(DateTimeException.class);
         }
     }
+
 }

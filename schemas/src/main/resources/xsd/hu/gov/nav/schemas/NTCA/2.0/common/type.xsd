@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+# Project: NAV NTCA Common XML séma
+# Author: NAV Informatikai Intézet
+
+# Version: v2.0.0-rc.1 2026/02/12
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://schemas.nav.gov.hu/NTCA/2.0/common/type"
+    xmlns="http://schemas.nav.gov.hu/NTCA/2.0/common/type"
+    xmlns:ntcaString="http://schemas.nav.gov.hu/NTCA/2.0/common/string"
+    elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+    <xs:import namespace="http://schemas.nav.gov.hu/NTCA/2.0/common/string" />
+
+    <xs:simpleType name="GenericDateType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Általános dátum</xs:documentation>
+            <xs:documentation xml:lang="en">Generic date</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:date">
+            <xs:pattern value="\d{4}-\d{2}-\d{2}" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="GenericDateUtcType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Általános UTC dátum</xs:documentation>
+            <xs:documentation xml:lang="en">Generic UTC date</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:date">
+            <xs:pattern value="\d{4}-\d{2}-\d{2}Z" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="GenericTimestampMilliType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Általános UTC milli másodperces időbélyeg</xs:documentation>
+            <xs:documentation xml:lang="en">Generic UTC millisecond timestamp</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:dateTime">
+            <xs:pattern value="\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d{1,3})?Z" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="GenericTimestampNanoType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Általános UTC nano másodperces időbélyeg</xs:documentation>
+            <xs:documentation xml:lang="en">Generic UTC nanosecond timestamp</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:dateTime">
+            <xs:pattern value="\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d{1,9})?Z" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="SHA256Type">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">SHA256 kód megadására szolgáló típus</xs:documentation>
+            <xs:documentation xml:lang="en">Field type for holding an SHA256 code</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="ntcaString:AtomicStringType64">
+            <xs:pattern value="[0-9A-Fa-f]{64}" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="SHA512Type">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">SHA512 kód megadására szolgáló típus</xs:documentation>
+            <xs:documentation xml:lang="en">Field type for holding an SHA512 code</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="ntcaString:AtomicStringType128">
+            <xs:pattern value="[0-9A-Fa-f]{128}" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="UuidType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Univerzálisan egyedi azonosító (UUID) típus</xs:documentation>
+            <xs:documentation xml:lang="en">Universally Unique Identifier (UUID) type</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="ntcaString:AtomicStringType36">
+            <xs:pattern
+                value="([0-9]|[a-f]|[A-F]){8}-([0-9]|[a-f]|[A-F]){4}-([0-9]|[a-f]|[A-F]){4}-([0-9]|[a-f]|[A-F]){4}-([0-9]|[a-f]|[A-F]){12}" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="GenericIdType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Általános azonosító típus</xs:documentation>
+            <xs:documentation xml:lang="en">Generic identifier type</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="UuidType" />
+    </xs:simpleType>
+
+    <xs:simpleType name="ExceptionType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Kivétel típus</xs:documentation>
+            <xs:documentation xml:lang="en">Exception type</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="ntcaString:AtomicStringType8192" />
+    </xs:simpleType>
+
+    <xs:complexType name="CryptoType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Kriptográfiai metódust leíró típus</xs:documentation>
+            <xs:documentation xml:lang="en">Denoting type of cryptographic method</xs:documentation>
+        </xs:annotation>
+        <xs:simpleContent>
+            <xs:extension base="ntcaString:SimpleText512NotBlankType">
+                <xs:attribute name="cryptoType" type="ntcaString:SimpleText50NotBlankType" use="required">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="hu">Kriptográfiai metódus neve (pl. "SHA-256", "AES-256")</xs:documentation>
+                        <xs:documentation xml:lang="en">Name of the cryptographic method (e.g. "SHA-256", "AES-256")</xs:documentation>
+                    </xs:annotation>
+                </xs:attribute>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+</xs:schema>

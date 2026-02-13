@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+# Project: NAV NTCA Common XML séma
+# Author: NAV Informatikai Intézet
+
+# Version: v2.0.0-rc.1 2026/02/12
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://schemas.nav.gov.hu/NTCA/2.0/common/authservice"
+    xmlns="http://schemas.nav.gov.hu/NTCA/2.0/common/authservice"
+    xmlns:ntcaString="http://schemas.nav.gov.hu/NTCA/2.0/common/string"
+    xmlns:ntcaType="http://schemas.nav.gov.hu/NTCA/2.0/common/type"
+    xmlns:ntcaService="http://schemas.nav.gov.hu/NTCA/2.0/common/service"
+    xmlns:ntcaCustomer="http://schemas.nav.gov.hu/NTCA/2.0/common/customer"
+    elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+    <xs:import namespace="http://schemas.nav.gov.hu/NTCA/2.0/common/string" />
+    <xs:import namespace="http://schemas.nav.gov.hu/NTCA/2.0/common/type" />
+    <xs:import namespace="http://schemas.nav.gov.hu/NTCA/2.0/common/service" />
+    <xs:import namespace="http://schemas.nav.gov.hu/NTCA/2.0/common/customer" />
+
+    <xs:complexType name="AuthenticationType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Authentikációs adat típus</xs:documentation>
+            <xs:documentation xml:lang="en">Authentication data type</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="login" type="ntcaString:SimpleText50NotBlankType">
+                <xs:annotation>
+                    <xs:documentation xml:lang="hu">A technikai felhasználó login neve</xs:documentation>
+                    <xs:documentation xml:lang="en">Login name of the technical user</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="passwordHash" type="ntcaType:CryptoType">
+                <xs:annotation>
+                    <xs:documentation xml:lang="hu">A technikai felhasználó jelszavának hash értéke</xs:documentation>
+                    <xs:documentation xml:lang="en">Hash value of the technical user's password</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="taxNumber" type="ntcaCustomer:TaxpayerIdType">
+                <xs:annotation>
+                    <xs:documentation xml:lang="hu">A rendszerben regisztrált adózó adószáma, aki nevében a technikai felhasználó tevékenykedik</xs:documentation>
+                    <xs:documentation xml:lang="en">The taxpayer's tax number, whose name the technical user operates in</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="predecessorTaxNumber" type="ntcaCustomer:TaxpayerIdType" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation xml:lang="hu">A jogelőd adószáma, aki nevében a technikai felhasználó tevékenykedik</xs:documentation>
+                    <xs:documentation xml:lang="en">The taxpayer's tax number, whose name the technical user operates in</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="requestSignature" type="ntcaType:CryptoType">
+                <xs:annotation>
+                    <xs:documentation xml:lang="hu">A kérés aláírásának hash értéke</xs:documentation>
+                    <xs:documentation xml:lang="en">Hash value of the request's signature</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="NotificationType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Értesítés típus</xs:documentation>
+            <xs:documentation xml:lang="en">Notification type</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="code" type="ntcaString:SimpleText100NotBlankType">
+                <xs:annotation>
+                    <xs:documentation xml:lang="hu">Értesítés kód</xs:documentation>
+                    <xs:documentation xml:lang="en">Notification code</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="text" type="ntcaString:SimpleText1024NotBlankType">
+                <xs:annotation>
+                    <xs:documentation xml:lang="hu">Értesítés szöveg</xs:documentation>
+                    <xs:documentation xml:lang="en">Notification text</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="NotificationsType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Egyéb értesítések típus</xs:documentation>
+            <xs:documentation xml:lang="en">Miscellaneous notifications type</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="notification" type="NotificationType" maxOccurs="unbounded">
+                <xs:annotation>
+                    <xs:documentation xml:lang="hu">Értesítés</xs:documentation>
+                    <xs:documentation xml:lang="en">Notification</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="AuthRequestType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Authentikációs kérés típus.</xs:documentation>
+            <xs:documentation xml:lang="en">Authentication request type.</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="ntcaService:BaseRequestType">
+                <xs:sequence>
+                    <xs:element name="auth" type="AuthenticationType">
+                        <xs:annotation>
+                            <xs:documentation xml:lang="hu">Authentikációs adatok</xs:documentation>
+                            <xs:documentation xml:lang="en">Authentication data</xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                    <xs:element name="requestVersion" type="ntcaString:AtomicStringType15" minOccurs="0">
+                        <xs:annotation>
+                            <xs:documentation xml:lang="hu">A kérés/válasz verziószáma, hogy a hívó melyik interfész verzió szerint küld adatot és
+                                várja a választ</xs:documentation>
+                            <xs:documentation xml:lang="en">Request version number, indicating which datastructure the client sends data in, and in
+                                which the response is expected</xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                    <xs:element name="headerVersion" type="ntcaString:AtomicStringType15" minOccurs="0">
+                        <xs:annotation>
+                            <xs:documentation xml:lang="hu">A header verziószáma</xs:documentation>
+                            <xs:documentation xml:lang="en">Header version number</xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="AuthResponseType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Authentikációs válasz típus.</xs:documentation>
+            <xs:documentation xml:lang="en">Authentication response type.</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="ntcaService:BaseResponseType">
+                <xs:sequence>
+                    <xs:element name="notifications" type="NotificationsType" minOccurs="0">
+                        <xs:annotation>
+                            <xs:documentation xml:lang="hu">Egyéb értesítések</xs:documentation>
+                            <xs:documentation xml:lang="en">Miscellaneous notifications</xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <!-- ROOT ELEMENTS -->
+    <xs:element name="AuthRequest">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Authentikációs kérés.</xs:documentation>
+            <xs:documentation xml:lang="en">Authentication request.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="AuthRequestType" />
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="AuthResponse">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Authentikációs válasz.</xs:documentation>
+            <xs:documentation xml:lang="en">Authentication response.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="AuthResponseType" />
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>

@@ -23,56 +23,58 @@
  * THE SOFTWARE.
  * #L%
  */
-package hu.gov.nav.schemas.common.core.adapter;
+package hu.gov.nav.schemas.common2.core.adapter;
 
-import java.time.OffsetDateTime;
+import java.time.OffsetTime;
 import java.time.ZoneOffset;
-import java.time.format.DateTimeFormatter;
 
 /**
- * Adapter class for converting {@link OffsetDateTime} objects to their UTC-based string representation and vice versa during XML marshalling and
- * unmarshalling.
- * <p>
- * This adapter ensures that {@link OffsetDateTime} instances are consistently represented in UTC format when serialized to XML. For example, an input
- * {@link OffsetDateTime} with a specific offset (e.g., '+02:00') will be converted to its equivalent UTC time (e.g., '2025-08-27T11:33:00Z') during
- * marshalling.
- * </p>
- * <p>
- * This class extends {@link OffsetDateTimeXmlAdapter} and overrides its methods to provide the UTC-specific behavior.
- * </p>
+ * The {@code UtcOffsetTimeXmlAdapter} class is an implementation of {@link OffsetTimeXmlAdapter} that provides functionality for converting
+ * {@link OffsetTime} objects to their string representation in UTC format and vice versa.
  * 
- * Usage Example:
+ * <p>
+ * This adapter is typically used in XML serialization and deserialization processes where {@link OffsetTime} values need to be represented in a
+ * standardized UTC format.
+ * 
+ * <p>
+ * Input format for the {@code marshal} method is an {@link OffsetTime} object, such as '15:07:34.2160856+02:00'. The output format is a string
+ * representation in UTC, such as '13:07:34.216085600Z'.
+ * 
+ * <p>
+ * Example usage:
  * 
  * <pre>
  * {@code
- * UtcOffsetDateTimeXmlAdapter adapter = new UtcOffsetDateTimeXmlAdapter();
- * OffsetDateTime dateTime = OffsetDateTime.parse("2025-08-27T13:33:00+02:00");
- * String marshalled = adapter.marshal(dateTime); // Outputs: "2025-08-27T11:33:00Z"
+ * UtcOffsetTimeXmlAdapter adapter = new UtcOffsetTimeXmlAdapter();
+ * OffsetTime offsetTime = OffsetTime.parse("15:07:34.2160856+02:00");
+ * String utcString = adapter.marshal(offsetTime); // Output: "13:07:34.216085600Z"
  * }
  * </pre>
  * 
- * @see OffsetDateTimeXmlAdapter
- * @see OffsetDateTime
+ * <p>
+ * This class ensures that all {@link OffsetTime} values are normalized to UTC during the marshalling process.
+ * 
+ * @see OffsetTimeXmlAdapter
+ * @see OffsetTime
  * @see ZoneOffset
- * @see DateTimeFormatter#ISO_OFFSET_DATE_TIME
  * 
  * @author scheffer.imrich
  * @since 1.0.0
  */
-public class UtcOffsetDateTimeXmlAdapter extends OffsetDateTimeXmlAdapter {
+public class UtcOffsetTimeXmlAdapter extends OffsetTimeXmlAdapter {
 
     /**
      * Default constructor.
      */
-    public UtcOffsetDateTimeXmlAdapter() {
+    public UtcOffsetTimeXmlAdapter() {
         // Default constructor
     }
 
     @Override
-    public String marshal(OffsetDateTime offsetDateTime) {
-        if (offsetDateTime == null) {
+    public String marshal(OffsetTime offsetTime) {
+        if (offsetTime == null) {
             return null;
         }
-        return DateTimeFormatter.ISO_OFFSET_DATE_TIME.format(offsetDateTime.withOffsetSameInstant(ZoneOffset.UTC));
+        return offsetTime.withOffsetSameInstant(ZoneOffset.UTC).toString();
     }
 }
