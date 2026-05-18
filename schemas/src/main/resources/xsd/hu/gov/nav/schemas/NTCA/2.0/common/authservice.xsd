@@ -3,7 +3,7 @@
 # Project: NAV NTCA Common XML séma
 # Author: NAV Informatikai Intézet
 
-# Version: v2.0.0-rc.1 2026/02/12
+# Version: v2.0.0-rc.2 2026/05/18
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
     targetNamespace="http://schemas.nav.gov.hu/NTCA/2.0/common/authservice"
