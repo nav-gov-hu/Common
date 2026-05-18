@@ -127,6 +127,39 @@
         </xs:complexContent>
     </xs:complexType>
 
+    <xs:complexType name="LegacyAuthRequestType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Régi authentikációs kérés típus.</xs:documentation>
+            <xs:documentation xml:lang="en">Legacy authentication request type.</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="ntcaService:LegacyBaseRequestType">
+                <xs:sequence>
+                    <xs:element name="auth" type="AuthenticationType">
+                        <xs:annotation>
+                            <xs:documentation xml:lang="hu">Authentikációs adatok</xs:documentation>
+                            <xs:documentation xml:lang="en">Authentication data</xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                    <xs:element name="requestVersion" type="ntcaString:AtomicStringType15" minOccurs="0">
+                        <xs:annotation>
+                            <xs:documentation xml:lang="hu">A kérés/válasz verziószáma, hogy a hívó melyik interfész verzió szerint küld adatot és
+                                várja a választ</xs:documentation>
+                            <xs:documentation xml:lang="en">Request version number, indicating which datastructure the client sends data in, and in
+                                which the response is expected</xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                    <xs:element name="headerVersion" type="ntcaString:AtomicStringType15" minOccurs="0">
+                        <xs:annotation>
+                            <xs:documentation xml:lang="hu">A header verziószáma</xs:documentation>
+                            <xs:documentation xml:lang="en">Header version number</xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
     <xs:complexType name="AuthResponseType">
         <xs:annotation>
             <xs:documentation xml:lang="hu">Authentikációs válasz típus.</xs:documentation>
@@ -155,6 +188,17 @@
         <xs:complexType>
             <xs:complexContent>
                 <xs:extension base="AuthRequestType" />
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="LegacyAuthRequest">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Régi authentikációs kérés.</xs:documentation>
+            <xs:documentation xml:lang="en">Legacy authentication request.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="LegacyAuthRequestType" />
             </xs:complexContent>
         </xs:complexType>
     </xs:element>
