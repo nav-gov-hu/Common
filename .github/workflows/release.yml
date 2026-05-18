@@ -17,7 +17,7 @@ on:
 
 jobs:
   maven-release:
-    uses: nav-gov-hu/.github/.github/workflows/WF-mvn-release.yml@release/0.1.x
+    uses: nav-gov-hu/.github/.github/workflows/WF-mvn-release.yml@release/0.2.x
     with:
       java-version: '17'
     secrets: inherit
