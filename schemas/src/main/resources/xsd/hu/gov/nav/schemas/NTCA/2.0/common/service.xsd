@@ -3,7 +3,7 @@
 # Project: NAV NTCA Common XML séma
 # Author: NAV Informatikai Intézet
 
-# Version: v2.0.0-rc.1 2026/02/12
+# Version: v2.0.0-rc.2 2026/05/18
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
     targetNamespace="http://schemas.nav.gov.hu/NTCA/2.0/common/service"
@@ -11,10 +11,11 @@
     xmlns:ntcaString="http://schemas.nav.gov.hu/NTCA/2.0/common/string"
     xmlns:ntcaType="http://schemas.nav.gov.hu/NTCA/2.0/common/type"
     elementFormDefault="qualified" attributeFormDefault="unqualified">
- 
+
     <xs:import namespace="http://schemas.nav.gov.hu/NTCA/2.0/common/string" />
     <xs:import namespace="http://schemas.nav.gov.hu/NTCA/2.0/common/type" />
 
+    <!-- SIMPLE TYPES -->
     <xs:simpleType name="ResultCodeType">
         <xs:annotation>
             <xs:documentation xml:lang="hu">Eredmény kód típus</xs:documentation>
@@ -45,6 +46,15 @@
                     <xs:documentation xml:lang="en">Success</xs:documentation>
                 </xs:annotation>
             </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="LegacyRequestIdType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Kérés azonosító típus, melyet a régi API-k használnak.</xs:documentation>
+            <xs:documentation xml:lang="en">Request identifier type used by legacy APIs.</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="ntcaString:AtomicStringType30">
+            <xs:pattern value="[+a-zA-Z0-9_]{1,30}" />
         </xs:restriction>
     </xs:simpleType>
 
@@ -87,6 +97,27 @@
         </xs:sequence>
     </xs:complexType>
 
+    <xs:complexType name="LegacyContextType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Kommunikáció általános adatai típus, melyet a régi API-k használnak.</xs:documentation>
+            <xs:documentation xml:lang="en">Communication general data type used by legacy APIs.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="requestId" type="LegacyRequestIdType">
+                <xs:annotation>
+                    <xs:documentation xml:lang="hu">A hívás azonosítója, elvárt hogy kliens oldalon egyedi legyen.</xs:documentation>
+                    <xs:documentation xml:lang="en">The call identifier, expected to be unique on the client side.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="timestamp" type="ntcaType:GenericTimestampMilliType">
+                <xs:annotation>
+                    <xs:documentation xml:lang="hu">A hívás kliens időpontja.</xs:documentation>
+                    <xs:documentation xml:lang="en">The call client time.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
     <xs:complexType name="BaseRequestType">
         <xs:annotation>
             <xs:documentation xml:lang="hu">Általános kérés típus.</xs:documentation>
@@ -96,6 +127,25 @@
             <xs:extension base="RootRequestType">
                 <xs:sequence>
                     <xs:element name="context" type="ContextType">
+                        <xs:annotation>
+                            <xs:documentation xml:lang="hu">A kérés általános adatai.</xs:documentation>
+                            <xs:documentation xml:lang="en">The general data of the request.</xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="LegacyBaseRequestType">
+        <xs:annotation>
+            <xs:documentation xml:lang="hu">Általános kérés típus a régi API-k számára.</xs:documentation>
+            <xs:documentation xml:lang="en">General request type for legacy APIs.</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="RootRequestType">
+                <xs:sequence>
+                    <xs:element name="context" type="LegacyContextType">
                         <xs:annotation>
                             <xs:documentation xml:lang="hu">A kérés általános adatai.</xs:documentation>
                             <xs:documentation xml:lang="en">The general data of the request.</xs:documentation>

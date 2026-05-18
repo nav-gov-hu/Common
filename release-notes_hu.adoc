@@ -1,6 +1,12 @@
 = Verziótörténet
 
-== 2.0.0
+== 2.0.0-rc.2
+
+* Korábbi verziókban használt `context` definíció típusokra bekerült egy új `LegacyContextType` típus, mely a régi struktúrát tartalmazza.
+Bizonyos esetekben csak a korábbi struktúra használható az API hívásokban.
+Ezzel együtt bekerült egy új `LegacyBaseRequestType` (service.xsd) és `LegacyAuthRequestType` valamint `LegacyAuthRequest` (authservice.xsd) típus is.
+
+== 2.0.0-rc.1
 NAV NTCA Common XML séma
 
 * Schema namespace-ek frissítve a következőre: hu.gov.nav.schemas.NTCA.2.0

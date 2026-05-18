@@ -1,6 +1,12 @@
 = Release notes
 
-== 2.0.0
+== 2.0.0-rc.2
+
+* A new `LegacyContextType` has been introduced for the `context` definition types used in earlier versions, containing the previous structure.
+In certain cases, only the previous structure can be used in API calls.
+Along with this, new `LegacyBaseRequestType` (service.xsd), `LegacyAuthRequestType`, and `LegacyAuthRequest` (authservice.xsd) types have also been introduced.
+
+== 2.0.0-rc.1
 NAV NTCA Common XML Schema
 
 * Schema namespaces updated to: hu.gov.nav.schemas.NTCA.2.0
