@@ -1,5 +1,10 @@
 = Verziótörténet
 
+== 2.0.0
+
+* Végleges kiadás, amely felváltja az előző kiadásjelölteket.
+* Nem tartalmaz további változtatásokat.
+
 == 2.0.0-rc.2
 
 * Korábbi verziókban használt `context` definíció típusokra bekerült egy új `LegacyContextType` típus, mely a régi struktúrát tartalmazza.

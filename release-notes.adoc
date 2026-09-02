@@ -1,5 +1,10 @@
 = Release notes
 
+== 2.0.0
+
+* Final release, replacing the previous release candidates.
+* No additional changes included.
+
 == 2.0.0-rc.2
 
 * A new `LegacyContextType` has been introduced for the `context` definition types used in earlier versions, containing the previous structure.
