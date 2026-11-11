@@ -44,21 +44,21 @@ class UtcOffsetTimeXmlAdapterTest {
     void offsetIsPositive() {
         OffsetTime input = OffsetTime.parse("15:07:34.2160856+02:00");
         String result = adapter.marshal(input);
-        Assertions.assertThat(result).isEqualTo("13:07:34.216085600Z");
+        Assertions.assertThat(result).isEqualTo("13:07:34.2160856Z");
     }
 
     @Test
     void offsetIsNegative() {
         OffsetTime input = OffsetTime.parse("10:15:30.1234567-03:00");
         String result = adapter.marshal(input);
-        Assertions.assertThat(result).isEqualTo("13:15:30.123456700Z");
+        Assertions.assertThat(result).isEqualTo("13:15:30.1234567Z");
     }
 
     @Test
     void alreadyUtc() {
         OffsetTime input = OffsetTime.of(8, 30, 0, 0, ZoneOffset.UTC);
         String result = adapter.marshal(input);
-        Assertions.assertThat(result).isEqualTo("08:30Z");
+        Assertions.assertThat(result).isEqualTo("08:30:00Z");
     }
 
     @Test
