@@ -1,5 +1,10 @@
 = Release notes
 
+== 2.1.0
+
+* No schema changes are included.
+* UtcOffsetTimeXmlAdapter has been fixed for XML compatibility.
+
 == 2.0.0
 
 * Final release, replacing the previous release candidates.
