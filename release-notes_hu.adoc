@@ -1,5 +1,10 @@
 = Verziótörténet
 
+== 2.0.1
+
+* Nem tartalmaz séma változtatásokat.
+* UtcOffsetTimeXmlAdapter javítva lett az XML kompatibilitás érdekében.
+
 == 2.0.0
 
 * Végleges kiadás, amely felváltja az előző kiadásjelölteket.
