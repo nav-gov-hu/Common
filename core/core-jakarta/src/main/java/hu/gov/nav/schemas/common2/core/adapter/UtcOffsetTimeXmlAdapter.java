@@ -27,6 +27,7 @@ package hu.gov.nav.schemas.common2.core.adapter;
 
 import java.time.OffsetTime;
 import java.time.ZoneOffset;
+import java.time.format.DateTimeFormatter;
 
 /**
  * The {@code UtcOffsetTimeXmlAdapter} class is an implementation of {@link OffsetTimeXmlAdapter} that provides functionality for converting
@@ -75,6 +76,6 @@ public class UtcOffsetTimeXmlAdapter extends OffsetTimeXmlAdapter {
         if (offsetTime == null) {
             return null;
         }
-        return offsetTime.withOffsetSameInstant(ZoneOffset.UTC).toString();
+        return DateTimeFormatter.ISO_OFFSET_TIME.format(offsetTime.withOffsetSameInstant(ZoneOffset.UTC));
     }
 }
