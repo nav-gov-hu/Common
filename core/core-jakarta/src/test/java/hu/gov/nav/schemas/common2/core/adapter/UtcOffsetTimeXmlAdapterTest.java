@@ -28,6 +28,9 @@ package hu.gov.nav.schemas.common2.core.adapter;
 import java.time.OffsetTime;
 import java.time.ZoneOffset;
 
+import javax.xml.datatype.DatatypeFactory;
+import javax.xml.datatype.XMLGregorianCalendar;
+
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -66,5 +69,15 @@ class UtcOffsetTimeXmlAdapterTest {
         OffsetTime input = OffsetTime.parse("23:59:59.999999999+00:00");
         String result = adapter.marshal(input);
         Assertions.assertThat(result).isEqualTo("23:59:59.999999999Z");
+    }
+
+    @Test
+    void xmlCompatibility() {
+        OffsetTime input = OffsetTime.of(8, 30, 0, 0, ZoneOffset.UTC);
+        String result = adapter.marshal(input);
+        XMLGregorianCalendar xmlGregorianCalendar = DatatypeFactory.newDefaultInstance().newXMLGregorianCalendar(result);
+        Assertions.assertThat(xmlGregorianCalendar).isNotNull();
+        OffsetTime actual = OffsetTime.parse(xmlGregorianCalendar.toXMLFormat());
+        Assertions.assertThat(actual).isEqualTo(input);
     }
 }
